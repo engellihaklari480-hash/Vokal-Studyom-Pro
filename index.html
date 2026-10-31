@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <meta name="theme-color" content="#111827">
+
+  <meta name="description" content="VoiceOver uyumlu ses ve video stüdyosu">
+
+  <title>Vokal Stüdyom Pro</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <header class="app-header">
+
+    <h1>Vokal Stüdyom Pro</h1>
+
+    <p>Sesini kaydet, düzenle ve geliştir.</p>
+
+  </header>
+
+  <main id="main-content">
+
+    <section id="home" class="page active" aria-labelledby="home-title">
+
+      <h2 id="home-title" tabindex="-1">Ana Sayfa</h2>
+
+      <p>Stüdyona hoş geldin. Çalışmak istediğin bölümü seç.</p>
+
+      <button type="button" class="home-card" data-open="audio">
+
+        <span class="card-title">Ses Stüdyosu</span>
+
+        <span>Ses kaydı ve ses dosyası içe aktarma</span>
+
+      </button>
+
+      <button type="button" class="home-card" data-open="video">
+
+        <span class="card-title">Video Stüdyosu</span>
+
+        <span>Video içe aktarma ve görüntüleme</span>
+
+      </button>
+
+      <button type="button" class="home-card" data-open="projects">
+
+        <span class="card-title">Projelerim</span>
+
+        <span>Bu oturumdaki dosyalarını görüntüle</span>
+
+      </button>
+
+    </section>
+
+    <section id="audio" class="page" aria-labelledby="audio-title" hidden>
+
+      <h2 id="audio-title" tabindex="-1">Ses Stüdyosu</h2>
+
+      <div class="panel">
+
+        <h3>Ses dosyası içe aktar</h3>
+
+        <label for="audio-file" class="file-button">
+
+          Ses dosyası seç
+
+        </label>
+
+        <input
+
+          id="audio-file"
+
+          type="file"
+
+          accept="audio/*,.mp3,.wav,.m4a,.aac,.aiff,.ogg,.opus,.flac"
+
+        >
+
+        <p class="help">
+
+          iPhone Fotoğraflar veya Dosyalar uygulamasından desteklenen bir ses dosyası seç.
+
+        </p>
+
+        <audio id="audio-player" controls preload="metadata">
+
+          Tarayıcın ses oynatmayı desteklemiyor.
+
+        </audio>
+
+      </div>
+
+      <div class="panel">
+
+        <h3>Mikrofon kaydı</h3>
+
+        <button type="button" id="record-button">
+
+          Kaydı başlat
+
+        </button>
+
+        <button type="button" id="pause-button" disabled>
+
+          Kaydı duraklat
+
+        </button>
+
+        <button type="button" id="resume-button" disabled>
+
+          Kayda devam et
+
+        </button>
+
+        <button type="button" id="stop-button" disabled>
+
+          Kaydı bitir
+
+        </button>
+
+        <p id="recording-state" class="help">
+
+          Kayıt başlatılmadı.
+
+        </p>
+
+        <h3>Son kayıt</h3>
+
+        <audio id="recorded-player" controls preload="metadata">
+
+          Tarayıcın ses oynatmayı desteklemiyor.
+
+        </audio>
+
+        <button type="button" id="download-audio" disabled>
+
+          Kaydı indir
+
+        </button>
+
+      </div>
+
+    </section>
+
+    <section id="video" class="page" aria-labelledby="video-title" hidden>
+
+      <h2 id="video-title" tabindex="-1">Video Stüdyosu</h2>
+
+      <div class="panel">
+
+        <h3>Video içe aktar</h3>
+
+        <label for="video-file" class="file-button">
+
+          Video dosyası seç
+
+        </label>
+
+        <input
+
+          id="video-file"
+
+          type="file"
+
+          accept="video/*,.mp4,.mov,.m4v,.webm"
+
+        >
+
+        <p class="help">
+
+          iPhone Fotoğraflar veya Dosyalar uygulamasından video seçebilirsin.
+
+        </p>
+
+        <video
+
+          id="video-player"
+
+          controls
+
+          playsinline
+
+          preload="metadata"
+
+        >
+
+          Tarayıcın video oynatmayı desteklemiyor.
+
+        </video>
+
+      </div>
+
+      <div class="panel">
+
+        <h3>Video bilgisi</h3>
+
+        <p id="video-info" aria-live="polite">
+
+          Henüz video seçilmedi.
+
+        </p>
+
+        <p class="help">
+
+          Bu sürüm video içe aktarma ve önizleme sağlar.
+
+          Videonun sesini işleyip yeni video olarak dışa aktarma henüz eklenmemiştir.
+
+        </p>
+
+      </div>
+
+    </section>
+
+    <section id="projects" class="page" aria-labelledby="projects-title" hidden>
+
+      <h2 id="projects-title" tabindex="-1">Projelerim</h2>
+
+      <p>Bu oturumda seçtiğin dosyalar ve oluşturduğun kayıtlar:</p>
+
+      <ul id="project-list">
+
+        <li>Henüz proje bulunmuyor.</li>
+
+      </ul>
+
+      <p class="help">
+
+        Bu ilk sürümde proje listesi kalıcı olarak saklanmaz.
+
+        Sayfa yenilendiğinde liste sıfırlanır.
+
+      </p>
+
+    </section>
+
+    <section id="settings" class="page" aria-labelledby="settings-title" hidden>
+
+      <h2 id="settings-title" tabindex="-1">Ayarlar</h2>
+
+      <div class="panel">
+
+        <h3>Uygulama bilgisi</h3>
+
+        <p>Vokal Stüdyom Pro – İlk çalışan sürüm.</p>
+
+        <p>
+
+          Ses kaydı, dosya seçimi ve oynatma özellikleri
+
+          kullandığın tarayıcının desteğine bağlıdır.
+
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <nav class="bottom-nav" aria-label="Ana gezinme">
+
+    <button
+
+      type="button"
+
+      class="nav-button selected"
+
+      data-page="home"
+
+      aria-current="page"
+
+    >
+
+      Ana Sayfa
+
+    </button>
+
+    <button type="button" class="nav-button" data-page="audio">
+
+      Ses
+
+    </button>
+
+    <button type="button" class="nav-button" data-page="video">
+
+      Video
+
+    </button>
+
+    <button type="button" class="nav-button" data-page="projects">
+
+      Projelerim
+
+    </button>
+
+    <button type="button" class="nav-button" data-page="settings">
+
+      Ayarlar
+
+    </button>
+
+  </nav>
+
+  <div
+
+    id="status"
+
+    class="visually-hidden"
+
+    role="status"
+
+    aria-live="polite"
+
+    aria-atomic="true"
+
+  ></div>
+
+  <script src="app.js"></script>
+
+</body>
+
+</html>
