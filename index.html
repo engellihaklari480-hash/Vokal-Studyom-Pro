@@ -6,329 +6,1443 @@
 
 <head>
 
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta name="theme-color" content="#111827">
+<meta name="theme-color" content="#101522">
 
-  <meta name="description" content="VoiceOver uyumlu ses ve video stüdyosu">
+<title>Vokal Stüdyom Pro</title>
 
-  <title>Vokal Stüdyom Pro</title>
+<style>
 
-  <link rel="stylesheet" href="style.css">
+:root {
+
+  color-scheme: dark;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  background: #101522;
+
+  color: #ffffff;
+
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; padding: 16px 16px 100px; }
+
+header { padding: 14px 0 22px; }
+
+h1 { font-size: 27px; margin: 0 0 8px; }
+
+h2 { font-size: 21px; margin: 24px 0 14px; }
+
+h3 { font-size: 17px; margin: 18px 0 10px; }
+
+p { color: #c5ccda; line-height: 1.5; }
+
+button, input, select {
+
+  font: inherit;
+
+}
+
+button {
+
+  background: #304c91;
+
+  color: white;
+
+  border: 1px solid #607fc9;
+
+  border-radius: 12px;
+
+  min-height: 48px;
+
+  padding: 11px 15px;
+
+  margin: 5px 3px;
+
+  cursor: pointer;
+
+}
+
+button.secondary { background: #273044; border-color: #536078; }
+ button.danger { background: #812e3a; border-color: #c35b68; }
+
+button:disabled { opacity: .5; }
+
+button:focus, input:focus, select:focus {
+
+  outline: 3px solid #ffd166;
+
+  outline-offset: 3px;
+
+}
+
+.panel {
+
+  background: #1b2435;
+
+  border: 1px solid #35445d;
+
+  border-radius: 16px;
+
+  padding: 16px;
+
+  margin: 14px 0;
+
+}
+
+.control { margin: 19px 0; }
+
+.control label {
+
+  display: block;
+
+  font-weight: 600;
+
+  margin-bottom: 9px;
+
+}
+
+.control input[type="range"] {
+
+  display: block;
+
+  width: 100%;
+
+  min-height: 35px;
+
+  accent-color: #80a5ff;
+
+}
+
+.value {
+
+  display: block;
+
+  margin-top: 5px;
+
+  color: #b9d0ff;
+
+  font-variant-numeric: tabular-nums;
+
+}
+
+input[type="file"] {
+
+  display: block;
+
+  max-width: 100%;
+
+  margin: 12px 0;
+
+  color: white;
+
+}
+
+audio, video { width: 100%; margin: 12px 0; }
+
+nav {
+
+  position: fixed;
+
+  bottom: 0;
+
+  left: 0;
+
+  right: 0;
+
+  background: #171f30;
+
+  border-top: 1px solid #45536b;
+
+  display: flex;
+
+  justify-content: space-around;
+
+  padding: 8px 3px calc(8px + env(safe-area-inset-bottom));
+
+  z-index: 10;
+
+}
+
+nav button {
+
+  flex: 1;
+
+  font-size: 12px;
+
+  padding: 9px 3px;
+
+  min-height: 48px;
+
+  background: transparent;
+
+  border: 0;
+
+}
+
+section[hidden] { display: none; }
+
+.status {
+
+  min-height: 28px;
+
+  color: #b9d0ff;
+
+  padding: 8px 0;
+
+}
+
+.small { font-size: 13px; color: #bdc7d8; }
+
+hr { border: 0; border-top: 1px solid #40506a; margin: 20px 0; }
+
+</style>
 
 </head>
 
 <body>
 
-  <header class="app-header">
+<header>
 
-    <h1>Vokal Stüdyom Pro</h1>
+  <h1>Vokal Stüdyom Pro</h1>
 
-    <p>Sesini kaydet, düzenle ve geliştir.</p>
+  <p>Ses kayıt, vokal düzenleme ve miksaj stüdyosu</p>
 
-  </header>
+  <div id="status" class="status" role="status" aria-live="polite">
 
-  <main id="main-content">
+    Stüdyo hazır.
 
-    <section id="home" class="page active" aria-labelledby="home-title">
+  </div>
 
-      <h2 id="home-title" tabindex="-1">Ana Sayfa</h2>
+</header>
 
-      <p>Stüdyona hoş geldin. Çalışmak istediğin bölümü seç.</p>
+<main>
 
-      <button type="button" class="home-card" data-open="audio">
+<section id="home">
 
-        <span class="card-title">Ses Stüdyosu</span>
+  <div class="panel">
 
-        <span>Ses kaydı ve ses dosyası içe aktarma</span>
+    <h2>Ana Sayfa</h2>
 
-      </button>
+    <p>Ses dosyanı yükleyebilir, mikrofonla kayıt yapabilir ve efektlerini düzenleyebilirsin.</p>
 
-      <button type="button" class="home-card" data-open="video">
+    <button onclick="showSection('audio')">Ses Stüdyosunu Aç</button>
 
-        <span class="card-title">Video Stüdyosu</span>
+    <button class="secondary" onclick="showSection('settings')">Ayarları Aç</button>
 
-        <span>Video içe aktarma ve görüntüleme</span>
+  </div>
+ </section>
 
-      </button>
+<section id="audio" hidden>
 
-      <button type="button" class="home-card" data-open="projects">
+  <h2>Ses Stüdyosu</h2>
 
-        <span class="card-title">Projelerim</span>
+  <div class="panel">
 
-        <span>Bu oturumdaki dosyalarını görüntüle</span>
+    <h3>Ses Dosyası</h3>
 
-      </button>
+    <label for="audioFile">Cihazından ses dosyası seç</label>
 
-    </section>
+    <input id="audioFile" type="file" accept="audio/*">
 
-    <section id="audio" class="page" aria-labelledby="audio-title" hidden>
+    <audio id="player" controls preload="metadata">
 
-      <h2 id="audio-title" tabindex="-1">Ses Stüdyosu</h2>
+      Tarayıcın ses oynatmayı desteklemiyor.
 
-      <div class="panel">
+    </audio>
 
-        <h3>Ses dosyası içe aktar</h3>
+    <button onclick="playAudio()">Çal</button>
 
-        <label for="audio-file" class="file-button">
+    <button class="secondary" onclick="pauseAudio()">Duraklat</button>
 
-          Ses dosyası seç
+    <button class="secondary" onclick="stopAudio()">Başa Al</button>
 
-        </label>
+  </div>
 
-        <input
+  <div class="panel">
 
-          id="audio-file"
+    <h3>Mikrofon Kaydı</h3>
 
-          type="file"
+    <p class="small">Mikrofon izni vermen gerekir. Kayıt tamamlandığında ses dosyası stüdyoya aktarılır.</p>
 
-          accept="audio/*,.mp3,.wav,.m4a,.aac,.aiff,.ogg,.opus,.flac"
+    <button onclick="startMicRecording()">Kaydı Başlat</button>
 
-        >
+    <button class="danger" onclick="stopMicRecording()">Kaydı Bitir</button>
 
-        <p class="help">
+  </div>
 
-          iPhone Fotoğraflar veya Dosyalar uygulamasından desteklenen bir ses dosyası seç.
+  <div class="panel">
 
-        </p>
+    <h3>İşlenmiş Ses Kaydı</h3>
 
-        <audio id="audio-player" controls preload="metadata">
+    <p class="small">Bu özellik, çalan sesin efektlerden geçmiş çıkışını kaydetmeye çalışır. Kayıt biçimi tarayıcı desteğine bağlıdır.</p>
 
-          Tarayıcın ses oynatmayı desteklemiyor.
+    <button onclick="exportProcessedAudio()">İşlenmiş Sesi Kaydet</button>
 
-        </audio>
+    <button class="danger" onclick="stopExport()">Dışa Aktarmayı Durdur</button>
 
-      </div>
+  </div>
 
-      <div class="panel">
+  <div class="panel">
 
-        <h3>Mikrofon kaydı</h3>
+    <h3>Ses Efektleri</h3>
 
-        <button type="button" id="record-button">
+    <h3>Beş Bantlı Ekolayzer</h3>
 
-          Kaydı başlat
+    <div class="control">
 
-        </button>
+      <label for="subBass">Alt Bas</label>
 
-        <button type="button" id="pause-button" disabled>
+      <input id="subBass" type="range" min="-24" max="24" step="0.1" value="0">
 
-          Kaydı duraklat
+      <output id="subBassValue" class="value">0 dB</output>
 
-        </button>
+    </div>
 
-        <button type="button" id="resume-button" disabled>
+    <div class="control">
 
-          Kayda devam et
+      <label for="bass">Bas</label>
 
-        </button>
+      <input id="bass" type="range" min="-24" max="24" step="0.1" value="0">
 
-        <button type="button" id="stop-button" disabled>
+      <output id="bassValue" class="value">0 dB</output>
 
-          Kaydı bitir
+    </div>
 
-        </button>
+    <div class="control">
 
-        <p id="recording-state" class="help">
+      <label for="mid">Orta Frekans</label>
 
-          Kayıt başlatılmadı.
+      <input id="mid" type="range" min="-24" max="24" step="0.1" value="0">
 
-        </p>
+      <output id="midValue" class="value">0 dB</output>
 
-        <h3>Son kayıt</h3>
+    </div>
 
-        <audio id="recorded-player" controls preload="metadata">
+    <div class="control">
 
-          Tarayıcın ses oynatmayı desteklemiyor.
+      <label for="upperMid">Üst Orta Frekans</label>
 
-        </audio>
+      <input id="upperMid" type="range" min="-24" max="24" step="0.1" value="0">
 
-        <button type="button" id="download-audio" disabled>
+      <output id="upperMidValue" class="value">0 dB</output>
 
-          Kaydı indir
+    </div>
 
-        </button>
+    <div class="control">
 
-      </div>
+      <label for="treble">Tiz</label>
 
-    </section>
+      <input id="treble" type="range" min="-24" max="24" step="0.1" value="0">
 
-    <section id="video" class="page" aria-labelledby="video-title" hidden>
+      <output id="trebleValue" class="value">0 dB</output>
 
-      <h2 id="video-title" tabindex="-1">Video Stüdyosu</h2>
+    </div>
 
-      <div class="panel">
+  </div>
 
-        <h3>Video içe aktar</h3>
+  <div class="panel">
 
-        <label for="video-file" class="file-button">
+    <h3>Reverb - Yankı ve Ortam</h3>
 
-          Video dosyası seç
+    <div class="control">
 
-        </label>
+      <label for="reverbAmount">Reverb Miktarı</label>
 
-        <input
+      <input id="reverbAmount" type="range" min="0" max="100" value="0">
 
-          id="video-file"
+      <output id="reverbAmountValue" class="value">0%</output>
 
-          type="file"
+    </div>
 
-          accept="video/*,.mp4,.mov,.m4v,.webm"
+    <div class="control">
 
-        >
+      <label for="roomSize">Oda Büyüklüğü</label>
 
-        <p class="help">
+      <input id="roomSize" type="range" min="0" max="100" value="40">
 
-          iPhone Fotoğraflar veya Dosyalar uygulamasından video seçebilirsin.
+      <output id="roomSizeValue" class="value">40%</output>
 
-        </p>
+    </div>
 
-        <video
+    <div class="control">
 
-          id="video-player"
+      <label for="reverbTime">Reverb Süresi</label>
 
-          controls
+      <input id="reverbTime" type="range" min="0.1" max="10" step="0.1" value="2">
 
-          playsinline
+      <output id="reverbTimeValue" class="value">2 saniye</output>
 
-          preload="metadata"
+    </div>
 
-        >
+    <div class="control">
 
-          Tarayıcın video oynatmayı desteklemiyor.
+      <label for="predelay">Ön Gecikme</label>
 
-        </video>
+      <input id="predelay" type="range" min="0" max="200" value="20">
 
-      </div>
+      <output id="predelayValue" class="value">20 ms</output>
 
-      <div class="panel">
+    </div>
 
-        <h3>Video bilgisi</h3>
+    <div class="control">
 
-        <p id="video-info" aria-live="polite">
+      <label for="reverbBrightness">Reverb Parlaklığı</label>
 
-          Henüz video seçilmedi.
+      <input id="reverbBrightness" type="range" min="0" max="100" value="50">
 
-        </p>
+      <output id="reverbBrightnessValue" class="value">50%</output>
 
-        <p class="help">
+    </div>
 
-          Bu sürüm video içe aktarma ve önizleme sağlar.
+  </div>
 
-          Videonun sesini işleyip yeni video olarak dışa aktarma henüz eklenmemiştir.
+  <div class="panel">
 
-        </p>
+    <h3>Echo - Tekrarlı Yankı</h3>
 
-      </div>
+    <div class="control">
 
-    </section>
+      <label for="echoAmount">Echo Miktarı</label>
 
-    <section id="projects" class="page" aria-labelledby="projects-title" hidden>
+      <input id="echoAmount" type="range" min="0" max="100" value="0">
 
-      <h2 id="projects-title" tabindex="-1">Projelerim</h2>
+      <output id="echoAmountValue" class="value">0%</output>
 
-      <p>Bu oturumda seçtiğin dosyalar ve oluşturduğun kayıtlar:</p>
+    </div>
 
-      <ul id="project-list">
+    <div class="control">
 
-        <li>Henüz proje bulunmuyor.</li>
+      <label for="echoDelay">Gecikme Süresi</label>
 
-      </ul>
+      <input id="echoDelay" type="range" min="0.05" max="2" step="0.01" value="0.3">
 
-      <p class="help">
+      <output id="echoDelayValue" class="value">0.30 saniye</output>
 
-        Bu ilk sürümde proje listesi kalıcı olarak saklanmaz.
+    </div>
 
-        Sayfa yenilendiğinde liste sıfırlanır.
+    <div class="control">
 
-      </p>
+      <label for="echoFeedback">Tekrar Miktarı</label>
 
-    </section>
+      <input id="echoFeedback" type="range" min="0" max="90" value="25">
 
-    <section id="settings" class="page" aria-labelledby="settings-title" hidden>
+      <output id="echoFeedbackValue" class="value">25%</output>
 
-      <h2 id="settings-title" tabindex="-1">Ayarlar</h2>
+    </div>
 
-      <div class="panel">
+  </div>
 
-        <h3>Uygulama bilgisi</h3>
+  <div class="panel">
 
-        <p>Vokal Stüdyom Pro – İlk çalışan sürüm.</p>
+    <h3>Compressor - Dinamik Kontrol</h3>
 
-        <p>
+    <div class="control">
 
-          Ses kaydı, dosya seçimi ve oynatma özellikleri
+      <label for="compression">Compressor Miktarı</label>
 
-          kullandığın tarayıcının desteğine bağlıdır.
+      <input id="compression" type="range" min="0" max="100" value="0">
 
-        </p>
+      <output id="compressionValue" class="value">0%</output>
 
-      </div>
+    </div>
 
-    </section>
+    <div class="control">
 
-  </main>
+      <label for="threshold">Threshold</label>
 
-  <nav class="bottom-nav" aria-label="Ana gezinme">
+      <input id="threshold" type="range" min="-60" max="0" value="-18">
 
-    <button
+      <output id="thresholdValue" class="value">-18 dB</output>
 
-      type="button"
+    </div>
 
-      class="nav-button selected"
+    <div class="control">
 
-      data-page="home"
+      <label for="ratio">Compression Ratio</label>
 
-      aria-current="page"
+      <input id="ratio" type="range" min="1" max="20" step="0.1" value="3">
 
-    >
+      <output id="ratioValue" class="value">3:1</output>
 
-      Ana Sayfa
+    </div>
 
-    </button>
+    <div class="control">
 
-    <button type="button" class="nav-button" data-page="audio">
+      <label for="attack">Attack</label>
 
-      Ses
+      <input id="attack" type="range" min="0.1" max="100" step="0.1" value="10">
 
-    </button>
+      <output id="attackValue" class="value">10 ms</output>
 
-    <button type="button" class="nav-button" data-page="video">
+    </div>
 
-      Video
+    <div class="control">
 
-    </button>
+      <label for="release">Release</label>
 
-    <button type="button" class="nav-button" data-page="projects">
+      <input id="release" type="range" min="10" max="1000" value="150">
 
-      Projelerim
+      <output id="releaseValue" class="value">150 ms</output>
 
-    </button>
+    </div>
 
-    <button type="button" class="nav-button" data-page="settings">
+    <div class="control">
 
-      Ayarlar
+      <label for="makeupGain">Makeup Gain</label>
 
-    </button>
+      <input id="makeupGain" type="range" min="-24" max="24" step="0.1" value="0">
 
-  </nav>
+      <output id="makeupGainValue" class="value">0 dB</output>
 
-  <div
+    </div>
 
-    id="status"
+  </div>
 
-    class="visually-hidden"
+  <div class="panel">
 
-    role="status"
+    <h3>Stereo ve Ses Seviyeleri</h3>
 
-    aria-live="polite"
+    <div class="control">
 
-    aria-atomic="true"
+      <label for="stereoWidth">Stereo Genişliği</label>
 
-  ></div>
+      <input id="stereoWidth" type="range" min="0" max="200" value="100">
 
-  <script src="app.js"></script>
+      <output id="stereoWidthValue" class="value">100%</output>
+
+    </div>
+
+    <div class="control">
+
+      <label for="leftLevel">Sol Kanal Seviyesi</label>
+
+      <input id="leftLevel" type="range" min="-24" max="24" step="0.1" value="0">
+
+      <output id="leftLevelValue" class="value">0 dB</output>
+
+    </div>
+
+    <div class="control">
+
+      <label for="rightLevel">Sağ Kanal Seviyesi</label>
+
+      <input id="rightLevel" type="range" min="-24" max="24" step="0.1" value="0">
+
+      <output id="rightLevelValue" class="value">0 dB</output>
+
+    </div>
+
+    <div class="control">
+
+      <label for="vocalLevel">Vokal Seviyesi</label>
+
+      <input id="vocalLevel" type="range" min="-24" max="24" step="0.1" value="0">
+
+      <output id="vocalLevelValue" class="value">0 dB</output>
+
+    </div>
+
+    <div class="control">
+
+      <label for="masterLevel">Ana Çıkış Seviyesi</label>
+
+      <input id="masterLevel" type="range" min="-24" max="24" step="0.1" value="0">
+
+      <output id="masterLevelValue" class="value">0 dB</output>
+
+    </div>
+
+  </div>
+
+  <div class="panel">
+
+    <h3>Kontroller</h3>
+
+    <button onclick="resetEffects()">Bütün Efektleri Sıfırla</button>
+
+    <button class="secondary" onclick="saveProject()">Ayarları Kaydet</button>
+
+    <button class="secondary" onclick="loadProject()">Kayıtlı Ayarları Yükle</button>
+
+  </div>
+
+</section>
+
+<section id="projects" hidden>
+
+  <h2>Projelerim</h2>
+
+  <div class="panel">
+
+    <p>Kaydedilen efekt ayarların bu cihazın tarayıcısında saklanır.</p>
+
+    <button onclick="saveProject()">Mevcut Ayarları Kaydet</button>
+
+    <button class="secondary" onclick="loadProject()">Ayarları Geri Yükle</button>
+
+  </div>
+
+</section>
+
+<section id="settings" hidden>
+
+  <h2>Ayarlar</h2>
+
+  <div class="panel">
+
+    <h3>Uygulama Bilgisi</h3>
+
+    <p>Vokal Stüdyom Pro</p>
+
+    <p>Türkçe arayüz ve ekran okuyucu uyumlu kontroller.</p>
+
+    <p class="small">Ses işleme tarayıcının Web Audio özelliklerini kullanır. Bazı kayıt ve dışa aktarma özellikleri iOS Safari sürümüne göre değişebilir.</p>
+
+  </div>
+
+</section>
+
+</main>
+
+<nav aria-label="Ana gezinme">
+
+  <button onclick="showSection('home')">Ana Sayfa</button>
+
+  <button onclick="showSection('audio')">Ses</button>
+
+  <button onclick="showSection('projects')">Projelerim</button>
+
+  <button onclick="showSection('settings')">Ayarlar</button>
+
+</nav>
+
+<script>
+
+"use strict";
+
+const $ = id => document.getElementById(id);
+
+const player = $("player");
+
+const statusBox = $("status");
+
+let audioContext = null;
+
+let mediaSource = null;
+
+let micStream = null;
+
+let micRecorder = null;
+
+let micChunks = [];
+
+let exportRecorder = null;
+
+let exportChunks = [];
+
+let exportDestination = null;
+
+let nodes = {};
+
+let engineReady = false;
+
+let currentObjectUrl = null;
+
+const controlIds = [
+
+  "subBass", "bass", "mid", "upperMid", "treble",
+
+  "reverbAmount", "roomSize", "reverbTime", "predelay",
+
+  "reverbBrightness", "echoAmount", "echoDelay", "echoFeedback",
+
+  "compression", "threshold", "ratio", "attack", "release",
+
+  "makeupGain", "stereoWidth", "leftLevel", "rightLevel",
+
+  "vocalLevel", "masterLevel"
+
+];
+
+function announce(message) {
+
+  statusBox.textContent = message;
+
+}
+
+function showSection(name) {
+
+  ["home", "audio", "projects", "settings"].forEach(id => {
+
+    $(id).hidden = id !== name;
+
+  });
+
+  announce(name === "audio" ? "Ses stüdyosu açıldı." :
+
+    name === "projects" ? "Projelerim açıldı." :
+
+    name === "settings" ? "Ayarlar açıldı." : "Ana sayfa açıldı.");
+
+}
+
+function dbToGain(db) {
+
+  return Math.pow(10, db / 20);
+
+}
+
+function createImpulse(context, seconds, roomSize) {
+
+  const length = Math.max(1, Math.floor(context.sampleRate * seconds));
+
+  const buffer = context.createBuffer(2, length, context.sampleRate);
+
+  for (let channel = 0; channel < 2; channel++) {
+
+    const data = buffer.getChannelData(channel);
+
+    for (let i = 0; i < length; i++) {
+
+      const fade = Math.pow(1 - i / length, 2 + roomSize * 4);
+
+      data[i] = (Math.random() * 2 - 1) * fade;
+
+    }
+
+  }
+
+  return buffer;
+
+}
+
+function connectEngine() {
+
+  if (engineReady) return;
+
+  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+
+  if (!AudioContextClass) {
+
+    announce("Bu tarayıcı Web Audio özelliğini desteklemiyor.");
+
+    return;
+
+  }
+
+  try {
+
+    audioContext = new AudioContextClass();
+
+    mediaSource = audioContext.createMediaElementSource(player);
+
+    nodes.eq = [];
+
+    const frequencies = [60, 180, 600, 2500, 9000];
+
+    const types = ["lowshelf", "peaking", "peaking", "peaking", "highshelf"];
+
+    let previous = mediaSource;
+
+    frequencies.forEach((frequency, index) => {
+
+      const filter = audioContext.createBiquadFilter();
+
+      filter.type = types[index];
+
+      filter.frequency.value = frequency;
+
+      filter.Q.value = 1;
+
+      previous.connect(filter);
+
+      previous = filter;
+
+      nodes.eq.push(filter);
+
+    });
+
+    nodes.dry = audioContext.createGain();
+
+    nodes.convolver = audioContext.createConvolver();
+
+    nodes.reverbDelay = audioContext.createDelay(0.25);
+
+    nodes.reverbTone = audioContext.createBiquadFilter();
+
+    nodes.reverbTone.type = "highshelf";
+
+    nodes.reverbWet = audioContext.createGain();
+
+    nodes.echoDelay = audioContext.createDelay(2.1);
+
+    nodes.echoFeedback = audioContext.createGain();
+
+    nodes.echoWet = audioContext.createGain();
+
+    nodes.mix = audioContext.createGain();
+
+    nodes.compressor = audioContext.createDynamicsCompressor();
+
+    nodes.makeup = audioContext.createGain();
+
+    nodes.vocal = audioContext.createGain();
+
+    previous.connect(nodes.dry);
+
+    nodes.dry.connect(nodes.mix);
+
+    previous.connect(nodes.reverbDelay);
+
+    nodes.reverbDelay.connect(nodes.convolver);
+
+    nodes.convolver.connect(nodes.reverbTone);
+
+    nodes.reverbTone.connect(nodes.reverbWet);
+
+    nodes.reverbWet.connect(nodes.mix);
+
+    previous.connect(nodes.echoDelay);
+
+    nodes.echoDelay.connect(nodes.echoFeedback);
+
+    nodes.echoFeedback.connect(nodes.echoDelay);
+
+    nodes.echoDelay.connect(nodes.echoWet);
+
+    nodes.echoWet.connect(nodes.mix);
+
+    nodes.mix.connect(nodes.compressor);
+
+    nodes.compressor.connect(nodes.makeup);
+
+    nodes.makeup.connect(nodes.vocal);
+
+    // Stereo genişliği için doğru mid/side kanal matrisi.
+
+    nodes.splitter = audioContext.createChannelSplitter(2);
+
+    nodes.merger = audioContext.createChannelMerger(2);
+
+    nodes.midL = audioContext.createGain();
+
+    nodes.midR = audioContext.createGain();
+
+    nodes.sideL = audioContext.createGain();
+
+    nodes.sideR = audioContext.createGain();
+
+    nodes.combineLL = audioContext.createGain();
+
+    nodes.combineLR = audioContext.createGain();
+
+    nodes.combineRL = audioContext.createGain();
+
+    nodes.combineRR = audioContext.createGain();
+
+    nodes.left = audioContext.createGain();
+
+    nodes.right = audioContext.createGain();
+
+    nodes.master = audioContext.createGain();
+
+    nodes.limiter = audioContext.createDynamicsCompressor();
+
+    nodes.limiter.threshold.value = -3;
+
+    nodes.limiter.knee.value = 0;
+
+    nodes.limiter.ratio.value = 20;
+
+    nodes.limiter.attack.value = 0.001;
+
+    nodes.limiter.release.value = 0.08;
+
+    nodes.vocal.connect(nodes.splitter);
+
+    nodes.splitter.connect(nodes.midL, 0);
+
+    nodes.splitter.connect(nodes.midR, 1);
+
+    nodes.splitter.connect(nodes.sideL, 0);
+
+    nodes.splitter.connect(nodes.sideR, 1);
+
+    nodes.midL.gain.value = 0.5;
+
+    nodes.midR.gain.value = 0.5;
+
+    nodes.sideL.gain.value = 0.5;
+
+    nodes.sideR.gain.value = -0.5;
+
+    nodes.midL.connect(nodes.combineLL);
+
+    nodes.sideR.connect(nodes.combineLL);
+
+    nodes.midR.connect(nodes.combineRR);
+
+    nodes.sideL.connect(nodes.combineRR);
+
+    nodes.combineLL.connect(nodes.merger, 0, 0);
+
+    nodes.combineRR.connect(nodes.merger, 0, 1);
+
+    nodes.merger.connect(nodes.left, 0, 0);
+
+    nodes.merger.connect(nodes.right, 1, 0);
+
+    nodes.left.connect(nodes.master);
+
+    nodes.right.connect(nodes.master);
+
+    nodes.master.connect(nodes.limiter);
+
+    nodes.limiter.connect(audioContext.destination);
+
+    exportDestination = audioContext.createMediaStreamDestination();
+
+    nodes.limiter.connect(exportDestination);
+
+    nodes.convolver.buffer = createImpulse(audioContext, 2, 0.4);
+
+    engineReady = true;
+
+    applyAllEffects();
+
+    announce("Ses işleme motoru hazır.");
+
+  } catch (error) {
+
+    announce("Ses motoru başlatılamadı: " + error.message);
+
+  }
+
+}
+
+function setParam(param, value) {
+
+  if (param) param.setTargetAtTime(value, audioContext.currentTime, 0.015);
+
+}
+
+function applyAllEffects() {
+
+  if (!engineReady) return;
+
+  const eqIds = ["subBass", "bass", "mid", "upperMid", "treble"];
+
+  eqIds.forEach((id, index) => {
+
+    setParam(nodes.eq[index].gain, Number($(id).value));
+
+  });
+
+  setParam(nodes.dry.gain, 1);
+
+  setParam(nodes.reverbWet.gain, Number($("reverbAmount").value) / 100);
+
+  setParam(nodes.reverbDelay.delayTime, Number($("predelay").value) / 1000);
+
+  setParam(nodes.reverbTone.gain,
+
+    (Number($("reverbBrightness").value) - 50) * 0.24);
+
+  const room = Number($("roomSize").value) / 100;
+
+  const time = Number($("reverbTime").value);
+
+  nodes.convolver.buffer = createImpulse(audioContext, time, room);
+
+  const echoAmount = Number($("echoAmount").value) / 100;
+
+  setParam(nodes.echoDelay.delayTime, Number($("echoDelay").value));
+
+  setParam(nodes.echoFeedback.gain,
+
+    Math.min(0.9, Number($("echoFeedback").value) / 100));
+
+  setParam(nodes.echoWet.gain, echoAmount);
+
+  const compression = Number($("compression").value) / 100;
+
+  const ratio = Number($("ratio").value);
+
+  nodes.compressor.threshold.setTargetAtTime(
+
+    Number($("threshold").value), audioContext.currentTime, 0.015);
+
+  nodes.compressor.ratio.setTargetAtTime(
+
+    1 + (ratio - 1) * compression, audioContext.currentTime, 0.015);
+
+  nodes.compressor.attack.setTargetAtTime(
+
+    Number($("attack").value) / 1000, audioContext.currentTime, 0.015);
+
+  nodes.compressor.release.setTargetAtTime(
+
+    Number($("release").value) / 1000, audioContext.currentTime, 0.015);
+
+  setParam(nodes.makeup.gain, dbToGain(Number($("makeupGain").value)));
+
+  setParam(nodes.vocal.gain, dbToGain(Number($("vocalLevel").value)));
+
+  const width = Number($("stereoWidth").value) / 100;
+
+  setParam(nodes.sideR.gain, -0.5 * width);
+
+  setParam(nodes.sideL.gain, 0.5 * width);
+
+  setParam(nodes.left.gain, dbToGain(Number($("leftLevel").value)));
+
+  setParam(nodes.right.gain, dbToGain(Number($("rightLevel").value)));
+
+  setParam(nodes.master.gain, dbToGain(Number($("masterLevel").value)));
+
+}
+
+function updateOutput(id) {
+
+  const value = Number($(id).value);
+
+  const output = $(id + "Value");
+
+  if (!output) return;
+
+  let text = value.toFixed(1);
+
+  if (["subBass", "bass", "mid", "upperMid", "treble",
+
+       "makeupGain", "leftLevel", "rightLevel",
+
+       "vocalLevel", "masterLevel", "threshold"].includes(id)) {
+
+    text += " dB";
+
+  } else if (id === "reverbTime") {
+
+    text += " saniye";
+
+  } else if (id === "predelay" || id === "attack" || id === "release") {
+
+    text += " ms";
+
+  } else if (id === "echoDelay") {
+
+    text += " saniye";
+
+  } else if (id === "ratio") {
+
+    text += ":1";
+
+  } else {
+
+    text += "%";
+
+  }
+
+  output.textContent = text;
+
+}
+
+controlIds.forEach(id => {
+
+  $(id).addEventListener("input", () => {
+
+    updateOutput(id);
+
+    if (engineReady) applyAllEffects();
+
+  });
+
+  updateOutput(id);
+
+});
+
+function playAudio() {
+
+  connectEngine();
+
+  if (!audioContext) return;
+
+  audioContext.resume().then(() => player.play()).catch(error => {
+
+    announce("Ses başlatılamadı: " + error.message);
+
+  });
+
+}
+
+function pauseAudio() {
+
+  player.pause();
+
+  announce("Ses duraklatıldı.");
+
+}
+ function stopAudio() {
+
+  player.pause();
+
+  player.currentTime = 0;
+
+  announce("Ses başa alındı.");
+
+}
+
+$("audioFile").addEventListener("change", event => {
+
+  const file = event.target.files[0];
+
+  if (!file) return;
+
+  if (currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
+
+  currentObjectUrl = URL.createObjectURL(file);
+
+  player.src = currentObjectUrl;
+
+  player.load();
+
+  announce(file.name + " yüklendi.");
+
+});
+
+player.addEventListener("play", () => {
+
+  connectEngine();
+
+  if (audioContext && audioContext.state === "suspended") {
+
+    audioContext.resume();
+
+  }
+
+});
+
+async function startMicRecording() {
+
+  try {
+
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+
+      announce("Bu tarayıcı mikrofon erişimini desteklemiyor.");
+
+      return;
+
+    }
+
+    micStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+
+    const options = {};
+
+    const types = [
+
+      "audio/mp4",
+
+      "audio/webm;codecs=opus",
+
+      "audio/webm"
+
+    ];
+
+    if (window.MediaRecorder && MediaRecorder.isTypeSupported) {
+
+      const supported = types.find(type => MediaRecorder.isTypeSupported(type));
+
+      if (supported) options.mimeType = supported;
+
+    }
+
+    micRecorder = new MediaRecorder(micStream, options);
+
+    micChunks = [];
+
+    micRecorder.ondataavailable = event => {
+
+      if (event.data.size > 0) micChunks.push(event.data);
+
+    };
+
+    micRecorder.onstop = () => {
+
+      const blob = new Blob(micChunks, {
+
+        type: micRecorder.mimeType || "audio/mp4"
+
+      });
+
+      if (currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
+
+      currentObjectUrl = URL.createObjectURL(blob);
+
+      player.src = currentObjectUrl;
+
+      player.load();
+
+      micStream.getTracks().forEach(track => track.stop());
+
+      micStream = null;
+
+      announce("Mikrofon kaydı tamamlandı ve stüdyoya aktarıldı.");
+
+    };
+
+    micRecorder.start();
+
+    announce("Mikrofon kaydı başladı.");
+
+  } catch (error) {
+
+    announce("Mikrofon kaydı başlatılamadı: " + error.message);
+
+  }
+
+}
+
+function stopMicRecording() {
+
+  if (micRecorder && micRecorder.state !== "inactive") {
+
+    micRecorder.stop();
+
+  } else {
+
+    announce("Devam eden mikrofon kaydı bulunamadı.");
+
+  }
+
+}
+
+function exportProcessedAudio() {
+
+  connectEngine();
+
+  if (!audioContext || !exportDestination) return;
+
+  if (!player.src) {
+
+    announce("Önce bir ses dosyası yüklemelisin.");
+
+    return;
+
+  }
+
+  if (!window.MediaRecorder) {
+
+    announce("Tarayıcı ses dışa aktarma kaydını desteklemiyor.");
+
+    return;
+
+  }
+
+  try {
+
+    audioContext.resume();
+
+    const stream = exportDestination.stream;
+
+    const options = {};
+
+    const types = [
+
+      "audio/mp4",
+
+      "audio/webm;codecs=opus",
+
+      "audio/webm"
+
+    ];
+
+    if (MediaRecorder.isTypeSupported) {
+
+      const supported = types.find(type => MediaRecorder.isTypeSupported(type));
+
+      if (supported) options.mimeType = supported;
+
+    }
+
+    exportChunks = [];
+
+    exportRecorder = new MediaRecorder(stream, options);
+
+    exportRecorder.ondataavailable = event => {
+
+      if (event.data.size > 0) exportChunks.push(event.data);
+
+    };
+
+    exportRecorder.onstop = () => {
+
+      const blob = new Blob(exportChunks, {
+
+        type: exportRecorder.mimeType || "audio/webm"
+
+      });
+
+      const url = URL.createObjectURL(blob);
+
+      const link = document.createElement("a");
+
+      link.href = url;
+
+      link.download = "vokal-studyom-islenmis-ses";
+
+      document.body.appendChild(link);
+
+      link.click();
+
+      link.remove();
+
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+
+      announce("İşlenmiş ses dosyası oluşturuldu.");
+
+    };
+
+    exportRecorder.start();
+
+    player.currentTime = 0;
+
+    player.onended = () => {
+
+      if (exportRecorder && exportRecorder.state !== "inactive") {
+
+        exportRecorder.stop();
+
+      }
+
+    };
+
+    player.play().catch(error => {
+
+      announce("Ses oynatılamadı: " + error.message);
+
+      stopExport();
+
+    }); 
+    announce("İşlenmiş ses kaydediliyor. Oynatma bitince dışa aktarılacak.");
+
+  } catch (error) {
+
+    announce("Dışa aktarma başlatılamadı: " + error.message);
+
+  }
+
+}
+
+function stopExport() {
+
+  if (exportRecorder && exportRecorder.state !== "inactive") {
+
+    exportRecorder.stop();
+
+    player.pause();
+
+    announce("Dışa aktarma durduruldu.");
+
+  } else {
+
+    announce("Devam eden dışa aktarma bulunamadı.");
+
+  }
+
+}
+
+function resetEffects() {
+
+  controlIds.forEach(id => {
+
+    const input = $(id);
+
+    input.value = input.defaultValue;
+
+    updateOutput(id);
+
+  });
+
+  if (engineReady) applyAllEffects();
+
+  announce("Efekt ayarları varsayılan değerlere döndürüldü.");
+
+}
+
+function getSettings() {
+
+  const settings = {};
+
+  controlIds.forEach(id => settings[id] = $(id).value);
+
+  return settings;
+
+}
+
+function saveProject() {
+
+  try {
+
+    localStorage.setItem("vokalStudyomSettings", JSON.stringify(getSettings()));
+
+    announce("Efekt ayarları bu cihaza kaydedildi.");
+
+  } catch (error) {
+
+    announce("Ayarlar kaydedilemedi: " + error.message);
+
+  }
+
+}
+
+function loadProject() {
+
+  try {
+
+    const saved = localStorage.getItem("vokalStudyomSettings");
+
+    if (!saved) {
+
+      announce("Henüz kayıtlı ayar bulunamadı.");
+
+      return;
+
+    }
+
+    const settings = JSON.parse(saved);
+
+    controlIds.forEach(id => {
+
+      if (settings[id] !== undefined) {
+
+        $(id).value = settings[id];
+
+        updateOutput(id);
+
+      }
+
+    });
+
+    if (engineReady) applyAllEffects();
+
+    announce("Kayıtlı ayarlar yüklendi.");
+
+  } catch (error) {
+
+    announce("Ayarlar yüklenemedi: " + error.message);
+
+  }
+
+}
+
+announce("Vokal Stüdyom Pro hazır. Ses bölümünden başlayabilirsin.");
+
+</script>
 
 </body>
 
