@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="tr">
 
 <head>
 
-<meta charset="UTF-8">
+<meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
@@ -14,63 +14,7 @@
 
 <style>
 
-:root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#101522;color:#fff}
-
-*{box-sizing:border-box}
-
-body{margin:0;padding:14px 14px 100px;background:#101522}
-
-h1{font-size:26px}h2{font-size:22px}h3{font-size:18px}
-
-p{color:#c5ccda;line-height:1.55}
-
-button,input,select,textarea{font:inherit}
-
-button{background:#304c91;color:white;border:1px solid #607fc9;border-radius:12px;min-height:48px;padding:11px 14px;margin:5px 3px}
-
-button.secondary{background:#273044;border-color:#536078}
-
-button.danger{background:#812e3a;border-color:#c35b68}
-
-button:focus,input:focus,select:focus,textarea:focus{outline:3px solid #ffd166;outline-offset:3px}
-
-.panel{background:#1b2435;border:1px solid #35445d;border-radius:16px;padding:15px;margin:14px 0}
-
-.control{margin:19px 0}
-
-.control label{display:block;font-weight:650;margin-bottom:8px}
-
-.control input[type=range]{display:block;width:100%;min-height:42px;accent-color:#80a5ff}
-
-.value{display:block;margin-top:5px;color:#b9d0ff}
-
-.help,.small{font-size:13px;color:#bdc7d8;line-height:1.5}
-
-input[type=file]{display:block;width:100%;min-height:48px;margin:12px 0;color:white}
-
-input[type=number],input[type=text],textarea,select{width:100%;padding:12px;border-radius:9px;border:1px solid #65738a;background:#101a2a;color:white;min-height:46px}
-
-textarea{min-height:90px}
-
-audio,video{width:100%;margin:12px 0}
-
-video{background:#000;max-height:360px}
-
-nav{position:fixed;bottom:0;left:0;right:0;background:#171f30;border-top:1px solid #45536b;display:flex;justify-content:space-around;padding:7px 2px calc(7px + env(safe-area-inset-bottom));z-index:10}
-
-nav button{flex:1;font-size:12px;padding:8px 2px;min-height:50px;background:transparent;border:0}
-
-section[hidden]{display:none}
-
-.status{min-height:30px;color:#b9d0ff;padding:8px 0}
-
-.notice{border-left:3px solid #80a5ff;padding:10px 12px;background:#202c42;border-radius:5px}
-
-.track{border:1px solid #536078;border-radius:12px;padding:12px;margin:12px 0}
-
-.track label{display:block;margin:8px 0}
-
-hr{border:0;border-top:1px solid #40506a;margin:20px 0}
+:root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#101522;color:#fff}*{box-sizing:border-box}body{margin:0;padding:12px 12px calc(100px + env(safe-area-inset-bottom));background:#101522;line-height:1.5}h1{font-size:25px}h2{font-size:22px}h3{font-size:18px}p{color:#d0d7e5}button,input,select,textarea{font:inherit}button{background:#304c91;color:#fff;border:1px solid #607fc9;border-radius:12px;min-height:48px;padding:10px 14px;margin:5px 3px}button.secondary{background:#273044;border-color:#536078}button.danger{background:#812e3a;border-color:#c35b68}button:disabled{opacity:.45}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #ffd166;outline-offset:3px}.panel{background:#1b2435;border:1px solid #35445d;border-radius:16px;padding:14px;margin:13px 0}.control{margin:17px 0}.control label,.field-label{display:block;font-weight:650;margin-bottom:7px}.control input[type=range]{display:block;width:100%;min-height:42px;accent-color:#80a5ff}.value{display:block;color:#c5d7ff;margin-top:4px}.help,.small{font-size:13px;color:#bdc7d8;line-height:1.55}input[type=file]{display:block;width:100%;min-height:48px;margin:12px 0;color:white}input[type=number],input[type=text],textarea,select{width:100%;padding:11px;border-radius:9px;border:1px solid #65738a;background:#101a2a;color:white;min-height:46px}textarea{min-height:90px}audio,video{width:100%;margin:12px 0}video{background:#000;max-height:360px}.status{min-height:28px;color:#c5d7ff;padding:8px 0}.notice{border-left:3px solid #80a5ff;padding:10px 12px;background:#202c42;border-radius:5px}.track{border:1px solid #536078;border-radius:12px;padding:12px;margin:12px 0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.section-nav{position:fixed;bottom:0;left:0;right:0;background:#171f30;border-top:1px solid #45536b;display:flex;justify-content:space-around;padding:7px 2px calc(7px + env(safe-area-inset-bottom));z-index:10}.section-nav button{flex:1;font-size:12px;padding:8px 2px;min-height:52px;background:transparent;border:0;margin:2px}.section-nav button[aria-current=page]{background:#304c91}.page[hidden],.hidden{display:none!important}.result{padding:12px;background:#101a2a;border-radius:10px;margin:8px 0}.result strong{display:block}.checkline{display:flex;gap:10px;align-items:center;margin:10px 0}.checkline input{width:22px;height:22px}.control .help{margin:5px 0 0}hr{border:0;border-top:1px solid #40506a;margin:18px 0}a{color:#b9d0ff}
 
 </style>
 
@@ -78,1308 +22,214 @@ hr{border:0;border-top:1px solid #40506a;margin:20px 0}
 
 <body>
 
-<header>
-
-<h1>Vokal Stüdyom Pro</h1>
-
-<p>Ses kayıt, vokal düzenleme, miksaj ve video stüdyosu</p>
-
-<div id="status" class="status" role="status" aria-live="polite">Stüdyo hazır.</div>
-
-</header>
+<header><h1>Vokal Stüdyom Pro</h1><p>Ses kayıt, vokal analiz, efekt ve video stüdyosu</p><div id="status" class="status" role="status" aria-live="polite">Stüdyo hazır.</div></header>
 
 <main>
 
-<section id="home">
+<section id="home" class="page">
 
-<div class="panel">
+<div class="panel"><h2 tabindex="-1">Ana Sayfa</h2><p>Sesini kaydet, analiz et, efektlerle düzenle ve projelerini sakla.</p><button type="button" data-open="audio">Ses Stüdyosunu Aç</button><button type="button" data-open="video">Video Stüdyosunu Aç</button><button type="button" data-open="projects">Projelerim</button></div>
 
-<h2>Ana Sayfa</h2>
-
-<p>Ses kayıtlarını düzenle, vokal efektlerini ayarla, videolarını işle ve projelerini sakla.</p>
-
-<button onclick="showSection('audio')">Ses Stüdyosunu Aç</button>
-
-<button onclick="showSection('video')">Video Stüdyosunu Aç</button>
-
-</div>
-
-<div class="panel">
-
-<h3>Stüdyo özellikleri</h3>
- <p>EQ, reverb, echo, compressor, vokal temizleme, mikrofon kaydı, çoklu kayıt kanalları ve video düzenleme.</p>
-
-<p class="small">Kontroller ekran okuyucular için etiketlenmiştir.</p>
-
-</div>
+<div class="panel"><h3>Gizlilik ve analiz</h3><p>Vokal analizi bu cihazda, tarayıcı içinde yapılır. Ham ses kaydın harici bir yapay zekâ servisine gönderilmez.</p><p class="small">Analiz sonuçları teknik tahmindir; tıbbi değerlendirme veya profesyonel stüdyo ölçümünün yerine geçmez.</p></div>
 
 </section>
 
-<section id="audio" hidden>
+<section id="audio" class="page" hidden>
 
-<h2>Ses Stüdyosu</h2>
+<h2 tabindex="-1">Ses Stüdyosu</h2>
 
-<div class="panel">
+<div class="panel"><h3>1. Ses dosyası yükleme ve oynatma</h3><label class="field-label" for="audioFile">Ses dosyası seç</label><input id="audioFile" type="file" accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.opus,.flac"><p id="fileInfo" class="small" aria-live="polite">Henüz dosya seçilmedi.</p><audio id="player" controls preload="metadata"></audio><div class="grid2"><button type="button" id="playBtn">Çal</button><button type="button" class="secondary" id="pauseBtn">Duraklat</button><button type="button" class="secondary" id="stopBtn">Başa al</button><button type="button" class="secondary" id="analyseBtn">Vokali analiz et</button></div></div>
 
-<h3>1. Ses dosyası yükleme ve oynatma</h3>
+<div class="panel"><h3>2. Akıllı vokal analizi</h3><p class="help">Dosya cihazında incelenir. İlk 45 saniye ve ilk ses kanalı cihazda incelenir. Temel frekans ve nota tahminleri, perde kararlılığı, vibrato ipucu ve spektral parlaklık hesaplanır. Formant bölgesi yalnızca yaklaşık spektral ipucu olarak verilir.</p><button type="button" id="analyseBtn2">Analizi başlat</button><p id="analysisStatus" class="small" role="status" aria-live="polite">Analiz bekliyor.</p><div id="analysisResults" class="result" aria-live="polite">Henüz analiz sonucu yok.</div><label class="field-label" for="targetProfile">Hedef vokal profili</label><select id="targetProfile"><option value="natural">Doğal vokal</option><option value="studio">Stüdyo vokali</option><option value="warm">Sıcak vokal</option><option value="bright">Parlak vokal</option></select><button type="button" id="recommendBtn" class="secondary">Analize göre ayar öner</button><button type="button" id="applyRecommendation">Önerileri uygula</button><div id="recommendation" class="result" aria-live="polite">Öneri oluşturulmadı.</div></div>
 
-<label for="audioFile">Ses dosyası seç</label>
+<div class="panel"><h3>3. Mikrofon kaydı ve canlı dinleme</h3><p class="help">Canlı dinlemede kulaklık kullan. Hoparlörle dinleme ses geri beslemesine neden olabilir.</p><div class="grid2"><button type="button" id="monitorEffects">Efektli canlı dinleme</button><button type="button" class="secondary" id="monitorDry">Efektsiz canlı dinleme</button><button type="button" class="danger" id="stopMonitor">Canlı dinlemeyi kapat</button><button type="button" id="recordMic">Yeni vokal kanalı kaydet</button><button type="button" class="danger" id="stopMic">Kaydı bitir</button></div><p id="micStatus" class="small" aria-live="polite">Mikrofon bekliyor.</p></div>
 
-<input id="audioFile" type="file" accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.flac">
+<div class="panel"><h3>4. Başlangıç ve bitiş</h3><p class="help">Bu ayarlar işlenmiş ses dışa aktarımında uygulanır. Normal oynatmada başlangıç gecikmesi kullanılır.</p><div class="control"><label for="startDelay">Başlangıç gecikmesi</label><input id="startDelay" type="range" min="0" max="10" step=".1" value="0"><output id="startDelayValue" class="value">0 saniye</output></div><div class="control"><label for="fadeIn">Yumuşak başlangıç</label><input id="fadeIn" type="range" min="0" max="10" step=".1" value="0"><output id="fadeInValue" class="value">0 saniye</output></div><div class="control"><label for="fadeOut">Yumuşak bitiş</label><input id="fadeOut" type="range" min="0" max="15" step=".1" value="0"><output id="fadeOutValue" class="value">0 saniye</output></div><div class="control"><label for="tailDuration">Efekt kuyruğu</label><input id="tailDuration" type="range" min="0" max="15" step=".1" value="3"><output id="tailDurationValue" class="value">3 saniye</output></div></div>
 
-<p id="fileInfo" class="small" aria-live="polite">Henüz dosya seçilmedi.</p>
+<div class="panel"><h3>5. Ekolayzer (EQ) – frekans dengesi</h3><p class="help">EQ belirli frekans bölgelerini yükseltir veya azaltır. Artı değer o bölgeyi belirginleştirir; eksi değer geri çeker. Büyük değişiklikler sesi yapaylaştırabilir.</p>
 
-<audio id="player" controls preload="metadata"></audio>
+<div class="control"><label for="subBass">Alt bas – en kalın frekanslar</label><input id="subBass" type="range" min="-24" max="24" step=".5" value="0"><output id="subBassValue" class="value">0 dB</output><p class="help">Artırmak gövde ve uğultuyu artırabilir; azaltmak dip uğultusunu temizleyebilir.</p></div>
 
-<button onclick="playAudio()">Çal</button>
+<div class="control"><label for="bass">Bas – sesin gövdesi</label><input id="bass" type="range" min="-24" max="24" step=".5" value="0"><output id="bassValue" class="value">0 dB</output><p class="help">Artırmak sesi dolgunlaştırır; fazla artırmak boğuklaştırır.</p></div>
 
-<button class="secondary" onclick="pauseAudio()">Duraklat</button>
+<div class="control"><label for="mid">Orta frekans – ana ses bölgesi</label><input id="mid" type="range" min="-24" max="24" step=".5" value="0"><output id="midValue" class="value">0 dB</output><p class="help">Artırmak sesi öne çıkarabilir; fazla artırmak burunsu veya sert duyulabilir.</p></div>
 
-<button class="secondary" onclick="stopAudio()">Başa al</button>
+<div class="control"><label for="upperMid">Üst orta – anlaşılabilirlik</label><input id="upperMid" type="range" min="-24" max="24" step=".5" value="0"><output id="upperMidValue" class="value">0 dB</output><p class="help">Artırmak kelimeleri belirginleştirebilir; fazla artırmak yorucu sertlik verir.</p></div>
 
-</div>
+<div class="control"><label for="treble">Tiz – parlaklık ve hava</label><input id="treble" type="range" min="-24" max="24" step=".5" value="0"><output id="trebleValue" class="value">0 dB</output><p class="help">Artırmak parlaklık verir; fazla artırmak s ve ş seslerini rahatsız edebilir.</p></div></div>
 
-<div class="panel">
+<div class="panel"><h3>6. Reverb – oda ve salon hissi</h3><p class="help">Reverb, sesin ardından çok sayıda kısa yansıma oluşturarak mekân hissi verir. Fazlası sözleri anlaşılmaz yapabilir.</p><div class="control"><label for="reverbAmount">Reverb miktarı</label><input id="reverbAmount" type="range" min="0" max="100" step="1" value="0"><output id="reverbAmountValue" class="value">0%</output><p class="help">Artırmak yankı hissini güçlendirir; azaltmak sesi kuru ve yakından duyurur.</p></div><div class="control"><label for="roomSize">Oda büyüklüğü</label><input id="roomSize" type="range" min="0" max="100" step="1" value="40"><output id="roomSizeValue" class="value">40%</output><p class="help">Artırmak daha büyük mekân hissi verir.</p></div><div class="control"><label for="reverbTime">Yankı süresi</label><input id="reverbTime" type="range" min=".3" max="8" step=".1" value="2"><output id="reverbTimeValue" class="value">2 saniye</output></div><div class="control"><label for="predelay">Ön gecikme</label><input id="predelay" type="range" min="0" max="200" step="1" value="20"><output id="predelayValue" class="value">20 ms</output><p class="help">Artırmak doğrudan ses ile yankı arasındaki boşluğu uzatır.</p></div><div class="control"><label for="reverbBrightness">Yankı parlaklığı</label><input id="reverbBrightness" type="range" min="0" max="100" step="1" value="50"><output id="reverbBrightnessValue" class="value">50%</output></div></div>
 
-<h3>2. Mikrofon kaydı</h3>
+<div class="panel"><h3>7. Echo – tekrarlı yankı</h3><p class="help">Echo, sesin belirgin tekrarlarını üretir. Reverb'den farklı olarak tekrarlar ayrı ayrı duyulabilir.</p><div class="control"><label for="echoAmount">Echo miktarı</label><input id="echoAmount" type="range" min="0" max="100" step="1" value="0"><output id="echoAmountValue" class="value">0%</output></div><div class="control"><label for="echoDelay">Tekrar aralığı</label><input id="echoDelay" type="range" min=".05" max="1.5" step=".01" value=".3"><output id="echoDelayValue" class="value">0.30 saniye</output></div><div class="control"><label for="echoFeedback">Tekrar sayısı / yoğunluğu</label><input id="echoFeedback" type="range" min="0" max="85" step="1" value="25"><output id="echoFeedbackValue" class="value">25%</output></div></div>
 
-<p class="help">Mikrofon izni vermen gerekir. Canlı dinlemede kulaklık kullanman önerilir.</p>
+<div class="panel"><h3>8. Compressor – ses seviyesini dengeleme</h3><p class="help">Compressor yüksek sesli bölümleri kontrol eder, böylece sesin genel seviyesi daha dengeli duyulabilir.</p><div class="control"><label for="compression">Compressor miktarı</label><input id="compression" type="range" min="0" max="100" step="1" value="0"><output id="compressionValue" class="value">0%</output></div><div class="control"><label for="threshold">Threshold – sıkıştırmanın başladığı seviye</label><input id="threshold" type="range" min="-60" max="0" step="1" value="-18"><output id="thresholdValue" class="value">-18 dB</output><p class="help">Daha düşük eksi değer, daha sessiz bölümlerin de sıkıştırmaya girmesine yol açar.</p></div><div class="control"><label for="ratio">Ratio – sıkıştırma oranı</label><input id="ratio" type="range" min="1" max="12" step=".5" value="3"><output id="ratioValue" class="value">3:1</output></div><div class="control"><label for="attack">Attack – tepki süresi</label><input id="attack" type="range" min=".1" max="100" step=".1" value="10"><output id="attackValue" class="value">10 ms</output></div><div class="control"><label for="release">Release – normale dönüş süresi</label><input id="release" type="range" min="10" max="1000" step="1" value="150"><output id="releaseValue" class="value">150 ms</output></div><div class="control"><label for="makeupGain">Makeup Gain – sıkıştırma sonrası ses telafisi</label><input id="makeupGain" type="range" min="-12" max="18" step=".5" value="0"><output id="makeupGainValue" class="value">0 dB</output></div></div>
 
-<button onclick="startMonitor(true)">Efektli canlı dinleme</button>
+<div class="panel"><h3>9. Vokal temizleme ve parlaklık</h3><div class="control"><label for="gate">Noise Gate – sessiz anları azaltma</label><input id="gate" type="range" min="0" max="100" step="1" value="0"><output id="gateValue" class="value">0%</output><p class="help">Ses seviyesi belirlenen eşiğin altına indiğinde çıkışı kısar. Sürekli gürültüyü tamamen yok eden yapay zekâ temizliği değildir.</p></div><div class="control"><label for="deEss">Üst frekans azaltma – sert S ve Ş seslerini yumuşatma</label><input id="deEss" type="range" min="0" max="100" step="1" value="0"><output id="deEssValue" class="value">0%</output><p class="help">Bu temel sürüm üst frekansları azaltır. Dinamik, heceye duyarlı profesyonel de-esser değildir.</p></div><div class="control"><label for="presence">Presence – vokalin öne gelmesi</label><input id="presence" type="range" min="-12" max="12" step=".5" value="0"><output id="presenceValue" class="value">0 dB</output></div></div>
 
-<button class="secondary" onclick="startMonitor(false)">Efektsiz canlı dinleme</button>
+<div class="panel"><h3>10. Stereo ve ses seviyeleri</h3><div class="control"><label for="stereoWidth">Stereo genişliği</label><input id="stereoWidth" type="range" min="0" max="150" step="1" value="100"><output id="stereoWidthValue" class="value">100%</output><p class="help">100% normal genişliktir. Azaltmak sesi ortaya toplar; artırmak yan farkları genişletir ve mono uyumluluğunu bozabilir.</p></div><div class="control"><label for="leftLevel">Sol kanal seviyesi</label><input id="leftLevel" type="range" min="-24" max="12" step=".5" value="0"><output id="leftLevelValue" class="value">0 dB</output></div><div class="control"><label for="rightLevel">Sağ kanal seviyesi</label><input id="rightLevel" type="range" min="-24" max="12" step=".5" value="0"><output id="rightLevelValue" class="value">0 dB</output></div><div class="control"><label for="vocalLevel">Vokal seviyesi</label><input id="vocalLevel" type="range" min="-24" max="12" step=".5" value="0"><output id="vocalLevelValue" class="value">0 dB</output></div><div class="control"><label for="masterLevel">Ana çıkış seviyesi</label><input id="masterLevel" type="range" min="-24" max="12" step=".5" value="0"><output id="masterLevelValue" class="value">0 dB</output></div></div>
 
-<button class="danger" onclick="stopMonitor()">Canlı dinlemeyi kapat</button>
+<div class="panel"><h3>11. Şarkı sözleri</h3><label class="field-label" for="lyricText">Şarkı sözü satırı</label><textarea id="lyricText" placeholder="Şarkı sözü satırını yaz"></textarea><label class="field-label" for="lyricTime">Başlangıç zamanı (saniye)</label><input id="lyricTime" type="number" min="0" step=".1" value="0"><button type="button" id="addLyric">Söz satırını ekle</button><div id="lyricsList"></div></div>
 
-<button onclick="startMicRecording()">Yeni vokal kanalı kaydet</button>
+<div class="panel"><h3>12. Hazır efekt profilleri</h3><label class="field-label" for="preset">Profil seç</label><select id="preset"><option value="">Profil seçiniz</option><option value="clean">Temiz vokal</option><option value="warm">Sıcak vokal</option><option value="stage">Sahne ve salon</option><option value="echo">Echo vokal</option><option value="radio">Radyo vokali</option></select><button type="button" id="applyPreset">Profili uygula</button><button type="button" class="secondary" id="resetEffects">Efektleri sıfırla</button></div>
 
-<button class="danger" onclick="stopMicRecording()">Kaydı bitir</button>
+<div class="panel"><h3>13. İşlenmiş sesi dışa aktar</h3><p class="help">İşleme tarayıcı içinde yapılır. Çıktı WAV biçimindedir; MP3 olarak kaydedildiği iddia edilmez. Uzun ve yüksek çözünürlüklü dosyalar iPhone belleğini zorlayabilir.</p><button type="button" id="exportAudio">İşlenmiş sesi WAV olarak kaydet</button><p id="exportStatus" class="small" role="status" aria-live="polite">Dışa aktarma bekliyor.</p></div>
 
-<p id="micStatus" class="small" aria-live="polite">Mikrofon bekliyor.</p>
-
-</div>
-
-<div class="panel">
-
-<h3>3. Kayıt kanalları</h3>
-
-<p class="help">Her mikrofon kaydı ayrı bir kanal olarak eklenir. En fazla 8 kanal oluşturulabilir.</p>
-
-<div id="tracks" aria-live="polite">Henüz kayıt kanalı yok.</div>
-
-<button class="secondary" onclick="playTracks()">Kanalları birlikte çal</button>
-
-<button class="secondary" onclick="stopTracks()">Kanalları durdur</button>
-
-<button onclick="exportTracks()">Kanalları miksleyip dışa aktar</button>
-
-<p id="trackStatus" class="small" aria-live="polite"></p>
-
-</div>
-
-<div class="panel">
-
-<h3>4. Başlangıç ve bitiş ayarları</h3>
-
-<div class="control"><label for="startDelay">Başlangıç gecikmesi</label><input id="startDelay" type="range" min="0" max="10" step=".1" value="0"><output id="startDelayValue" class="value">0 saniye</output></div>
-
-<div class="control"><label for="fadeIn">Fade In - Yumuşak başlangıç</label><input id="fadeIn" type="range" min="0" max="10" step=".1" value="0"><output id="fadeInValue" class="value">0 saniye</output></div>
-
-<div class="control"><label for="fadeOut">Fade Out - Yumuşak bitiş</label><input id="fadeOut" type="range" min="0" max="15" step=".1" value="0"><output id="fadeOutValue" class="value">0 saniye</output></div>
-
-<div class="control"><label for="tailDuration">Efekt kuyruğu</label><input id="tailDuration" type="range" min="0" max="15" step=".1" value="3"><output id="tailDurationValue" class="value">3 saniye</output></div>
-
-</div>
-
-<div class="panel">
-
-<h3>5. Beş bantlı ekolayzer</h3>
-
-<p class="help">Her bant -24 dB ile +24 dB arasında ayarlanabilir.</p>
-
-<div class="control"><label for="subBass">Alt bas</label><input id="subBass" type="range" min="-24" max="24" step=".5" value="0"><output id="subBassValue" class="value">0 dB</output></div>
-
-<div class="control"><label for="bass">Bas</label><input id="bass" type="range" min="-24" max="24" step=".5" value="0"><output id="bassValue" class="value">0 dB</output></div>
-
-<div class="control"><label for="mid">Orta frekans</label><input id="mid" type="range" min="-24" max="24" step=".5" value="0"><output id="midValue" class="value">0 dB</output></div>
-
-<div class="control"><label for="upperMid">Üst orta frekans</label><input id="upperMid" type="range" min="-24" max="24" step=".5" value="0"><output id="upperMidValue" class="value">0 dB</output></div>
-
-<div class="control"><label for="treble">Tiz</label><input id="treble" type="range" min="-24" max="24" step=".5" value="0"><output id="trebleValue" class="value">0 dB</output></div>
-
-</div>
-
-<div class="panel">
-
-<h3>6. Reverb - Ortam efekti</h3>
-
-<p class="help">Oda ve salon yankısı oluşturur.</p>
-
-<div class="control"><label for="reverbAmount">Reverb miktarı</label><input id="reverbAmount" type="range" min="0" max="100" step=".5" value="0"><output id="reverbAmountValue" class="value">0%</output></div>
-
-<div class="control"><label for="roomSize">Oda büyüklüğü</label><input id="roomSize" type="range" min="0" max="100" step=".5" value="40"><output id="roomSizeValue" class="value">40%</output></div>
-
-<div class="control"><label for="reverbTime">Reverb süresi</label><input id="reverbTime" type="range" min=".5" max="10" step=".5" value="2"><output id="reverbTimeValue" class="value">2 saniye</output></div>
-
-<div class="control"><label for="predelay">Ön gecikme</label><input id="predelay" type="range" min="0" max="200" step="1" value="20"><output id="predelayValue" class="value">20 ms</output></div>
-
-<div class="control"><label for="reverbBrightness">Reverb parlaklığı</label><input id="reverbBrightness" type="range" min="0" max="100" step=".5" value="50"><output id="reverbBrightnessValue" class="value">50%</output></div>
-
-</div>
-
-<div class="panel">
-
-<h3>7. Echo - Tekrarlı yankı</h3>
-
-<div class="control"><label for="echoAmount">Echo miktarı</label><input id="echoAmount" type="range" min="0" max="100" step=".5" value="0"><output id="echoAmountValue" class="value">0%</output></div>
-
-<div class="control"><label for="echoDelay">Echo gecikmesi</label><input id="echoDelay" type="range" min=".05" max="2" step=".05" value=".3"><output id="echoDelayValue" class="value">0.30 saniye</output></div>
-
-<div class="control"><label for="echoFeedback">Echo tekrar miktarı</label><input id="echoFeedback" type="range" min="0" max="85" step=".5" value="25"><output id="echoFeedbackValue" class="value">25%</output></div>
-
-</div>
-
-<div class="panel">
-
-<h3>8. Compressor - Dinamik kontrol</h3>
-
-<div class="control"><label for="compression">Compressor miktarı</label><input id="compression" type="range" min="0" max="100" step=".5" value="0"><output id="compressionValue" class="value">0%</output></div>
-
-<div class="control"><label for="threshold">Threshold</label><input id="threshold" type="range" min="-60" max="0" step=".5" value="-18"><output id="thresholdValue" class="value">-18 dB</output></div>
-
-<div class="control"><label for="ratio">Ratio</label><input id="ratio" type="range" min="1" max="20" step=".5" value="3"><output id="ratioValue" class="value">3:1</output></div>
-
-<div class="control"><label for="attack">Attack</label><input id="attack" type="range" min=".1" max="100" step=".5" value="10"><output id="attackValue" class="value">10 ms</output></div>
-
-<div class="control"><label for="release">Release</label><input id="release" type="range" min="10" max="1000" step="1" value="150"><output id="releaseValue" class="value">150 ms</output></div>
-
-<div class="control"><label for="makeupGain">Makeup Gain</label><input id="makeupGain" type="range" min="-24" max="24" step=".5" value="0"><output id="makeupGainValue" class="value">0 dB</output></div>
- </div>
-
-<div class="panel">
-
-<h3>9. Vokal temizleme ve ton</h3>
-
-<div class="control"><label for="gate">Noise Gate miktarı</label><input id="gate" type="range" min="0" max="100" step=".5" value="0"><output id="gateValue" class="value">0%</output><p class="help">Sessiz bölümlerdeki sesi azaltır; gelişmiş yapay zekâ gürültü temizleme değildir.</p></div>
-
-<div class="control"><label for="deEss">Sert S seslerini azaltma</label><input id="deEss" type="range" min="0" max="100" step=".5" value="0"><output id="deEssValue" class="value">0%</output><p class="help">Üst frekansları basit filtreyle azaltır; profesyonel dinamik de-esser değildir.</p></div>
-
-<div class="control"><label for="presence">Vokal parlaklığı</label><input id="presence" type="range" min="-12" max="12" step=".5" value="0"><output id="presenceValue" class="value">0 dB</output></div>
-
-</div>
-
-<div class="panel">
-
-<h3>10. Stereo ve ses seviyeleri</h3>
-
-<div class="control"><label for="stereoWidth">Stereo genişliği</label><input id="stereoWidth" type="range" min="0" max="200" step=".5" value="100"><output id="stereoWidthValue" class="value">100%</output></div>
-
-<div class="control"><label for="leftLevel">Sol kanal seviyesi</label><input id="leftLevel" type="range" min="-24" max="12" step=".5" value="0"><output id="leftLevelValue" class="value">0 dB</output></div>
-
-<div class="control"><label for="rightLevel">Sağ kanal seviyesi</label><input id="rightLevel" type="range" min="-24" max="12" step=".5" value="0"><output id="rightLevelValue" class="value">0 dB</output></div>
-
-<div class="control"><label for="vocalLevel">Vokal seviyesi</label><input id="vocalLevel" type="range" min="-24" max="12" step=".5" value="0"><output id="vocalLevelValue" class="value">0 dB</output></div>
-
-<div class="control"><label for="masterLevel">Ana çıkış seviyesi</label><input id="masterLevel" type="range" min="-24" max="12" step=".5" value="0"><output id="masterLevelValue" class="value">0 dB</output></div>
-
-</div>
-
-<div class="panel">
- <h3>11. Şarkı sözleri</h3>
-
-<label for="lyricText">Şarkı sözü satırı</label>
-
-<textarea id="lyricText" placeholder="Şarkı sözünü yaz"></textarea>
-
-<label for="lyricTime">Başlangıç zamanı (saniye)</label>
-
-<input id="lyricTime" type="number" min="0" step=".1" value="0">
-
-<button onclick="addLyric()">Söz satırını ekle</button>
-
-<div id="lyricsList" aria-live="polite"></div>
-
-</div>
-
-<div class="panel">
-
-<h3>12. Hazır efekt profilleri</h3>
-
-<label for="preset">Profil seç</label>
-
-<select id="preset">
-
-<option value="">Profil seçiniz</option>
-
-<option value="clean">Temiz vokal</option>
-
-<option value="warm">Sıcak vokal</option>
-
-<option value="stage">Sahne ve salon</option>
-
-<option value="echo">Echo vokal</option>
-
-<option value="radio">Radyo vokali</option>
-
-</select>
-
-<button onclick="applyPreset()">Profili uygula</button>
-
-<button class="secondary" onclick="resetEffects()">Efektleri sıfırla</button>
-
-</div>
-
-<div class="panel">
-
-<h3>13. İşlenmiş sesi dışa aktar</h3>
-
-<p class="help">Dışa aktarma biçimi tarayıcının MediaRecorder desteğine göre seçilir. MP3 desteği yoksa MP3 olarak kaydedildiği iddia edilmez.</p>
-
-<button onclick="exportProcessedAudio()">İşlenmiş sesi kaydet</button>
-
-<button class="danger" onclick="stopExport()">Dışa aktarmayı durdur</button>
-
-<p id="exportStatus" class="small" aria-live="polite">Dışa aktarma bekliyor.</p>
-
-</div>
+<div class="panel"><h3>14. Gelişmiş kayıt kanalları</h3><p class="help">Sekiz kanallı kayıt alanı ana görünümü kalabalıklaştırmaması için burada isteğe bağlı açılır.</p><button type="button" id="toggleTracks" aria-expanded="false" aria-controls="trackArea">Gelişmiş kayıt kanallarını göster</button><div id="trackArea" hidden><p id="trackStatus" class="small" aria-live="polite">Henüz kayıt kanalı yok.</p><div id="tracks">Henüz kayıt kanalı yok.</div><div class="grid2"><button type="button" id="playTracks">Kanalları birlikte çal</button><button type="button" class="secondary" id="stopTracks">Kanalları durdur</button><button type="button" id="exportTracks">Kanalları WAV miksle</button><button type="button" class="danger" id="clearTracks">Bütün kanalları sil</button></div></div></div>
 
 </section>
 
-<section id="video" hidden>
+<section id="video" class="page" hidden><h2 tabindex="-1">Video Stüdyosu</h2><div class="panel"><h3>Video içe aktarma</h3><label class="field-label" for="videoFile">Video dosyası seç</label><input id="videoFile" type="file" accept="video/*,.mp4,.mov,.m4v,.webm"><p id="videoInfo" class="small">Henüz video seçilmedi.</p><video id="videoPlayer" controls playsinline preload="metadata"></video></div><div class="panel"><h3>Video başlangıç ve bitiş</h3><label class="field-label" for="videoStart">Başlangıç zamanı (saniye)</label><input id="videoStart" type="number" min="0" step=".1" value="0"><label class="field-label" for="videoEnd">Bitiş zamanı (saniye)</label><input id="videoEnd" type="number" min="0" step=".1" value="0"><button type="button" id="setVideoStart">Mevcut zamanı başlangıç yap</button><button type="button" id="setVideoEnd">Mevcut zamanı bitiş yap</button><button type="button" class="secondary" id="previewVideo">Seçilen bölümü önizle</button></div><div class="panel"><h3>Video dışa aktarma</h3><p class="notice small">Video dışa aktarma tarayıcı ve video codec desteğine bağlıdır. Desteklenmiyorsa önizleme yine kullanılabilir.</p><button type="button" id="exportVideo">Kırpılmış videoyu dışa aktar</button><button type="button" class="danger" id="stopVideoExport">Dışa aktarmayı durdur</button><p id="videoStatus" class="small" aria-live="polite"></p></div></section>
 
-<h2>Video Stüdyosu</h2>
+<section id="projects" class="page" hidden><h2 tabindex="-1">Projelerim</h2><div class="panel"><h3>Proje kaydetme ve yükleme</h3><p>Efekt ayarları, şarkı sözleri ve kayıt kanalları bu cihazın tarayıcısında saklanır. Orijinal ses ve video dosyaları ayrıca yüklenmelidir. Safari verilerini silersen yerel projeler kaybolabilir.</p><button type="button" id="saveProject">Projeyi bu cihaza kaydet</button><button type="button" class="secondary" id="loadProject">Kayıtlı projeyi yükle</button><button type="button" class="secondary" id="exportProject">Proje dosyasını dışa aktar</button><label class="field-label" for="projectFile">Proje dosyasını içe aktar</label><input id="projectFile" type="file" accept=".json,application/json"><p id="projectStatus" class="small" aria-live="polite"></p></div></section>
 
-<div class="panel">
-
-<h3>Video içe aktarma</h3>
-
-<label for="videoFile">Video dosyası seç</label>
-
-<input id="videoFile" type="file" accept="video/*">
-
-<p id="videoInfo" class="small">Henüz video seçilmedi.</p>
-
-<video id="videoPlayer" controls playsinline preload="metadata"></video>
-
-</div>
-
-<div class="panel">
-
-<h3>Video başlangıç ve bitiş noktaları</h3>
-
-<label for="videoStart">Başlangıç zamanı (saniye)</label>
-
-<input id="videoStart" type="number" min="0" step=".1" value="0">
-
-<label for="videoEnd">Bitiş zamanı (saniye)</label>
-
-<input id="videoEnd" type="number" min="0" step=".1" value="0">
-
-<button onclick="setVideoStart()">Mevcut zamanı başlangıç yap</button>
-
-<button onclick="setVideoEnd()">Mevcut zamanı bitiş yap</button>
-
-<button class="secondary" onclick="previewVideoTrim()">Seçilen bölümü önizle</button>
-
-</div>
-
-<div class="panel">
-
-<h3>Video dışa aktarma</h3>
-
-<p class="notice small">Video dışa aktarma tarayıcı desteğine bağlıdır. iPhone Safari desteklemezse işlem yapılamaz.</p>
-
-<button onclick="exportVideo()">Kırpılmış videoyu dışa aktar</button>
-
-<button class="danger" onclick="stopVideoExport()">Dışa aktarmayı durdur</button>
-
-<p id="videoStatus" class="small" aria-live="polite"></p>
-
-</div>
-
-</section>
-
-<section id="projects" hidden>
-
-<h2>Projelerim</h2>
-
-<div class="panel">
-
-<h3>Proje kaydetme ve yükleme</h3>
-
-<p>Proje ayarları ve kayıt kanalları bu cihazın tarayıcısında saklanır. Tarayıcı verilerini silersen kayıtlar kaybolabilir.</p>
-
-<button onclick="saveProject()">Projeyi kaydet</button>
-
-<button class="secondary" onclick="loadProject()">Projeyi yükle</button>
-
-<button class="secondary" onclick="exportProject()">Proje dosyasını dışa aktar</button>
-
-<label for="projectFile">Proje dosyasını içe aktar</label>
-
-<input id="projectFile" type="file" accept=".json,application/json">
-
-<p id="projectStatus" class="small" aria-live="polite"></p>
-
-</div>
-
-</section>
-
-<section id="settings" hidden>
-
-<h2>Ayarlar</h2>
-
-<div class="panel">
-
-<h3>Uygulama bilgisi</h3>
-
-<p>Vokal Stüdyom Pro</p>
-
-<p>Türkçe arayüz ve VoiceOver uyumlu kontroller.</p>
-
-</div>
-
-<div class="panel">
-
-<h3>Teknik bilgilendirme</h3>
-
-<p class="small">Ses işleme Web Audio API kullanır. Tarayıcı desteği cihaz ve sürüme göre değişebilir.</p>
-
-<p class="small">Pitch correction, otomatik autotune ve yapay zekâ ses analizi bu sürümde bulunmaz.</p>
-
-<p class="small">Noise Gate basit seviye kontrolüdür; profesyonel spektral gürültü temizleme değildir.</p>
-
-<p class="small">Proje verileri tarayıcının yerel depolama alanında tutulur.</p>
-
-</div>
-
-</section>
+<section id="settings" class="page" hidden><h2 tabindex="-1">Ayarlar ve teknik bilgiler</h2><div class="panel"><h3>Gizlilik</h3><p>Vokal analizinde seçtiğin ses dosyası tarayıcı belleğinde işlenir. Bu kod harici yapay zekâ servisine ses göndermez ve API anahtarı kullanmaz.</p></div><div class="panel"><h3>Teknik sınırlar</h3><p class="small">Perde tespiti temel frekans tahminiyle yapılır. Vibrato ve kararlılık, tespit edilen perde örneklerinden yaklaşık hesaplanır. Formantlar bu sürümde güvenilir formant izleme algoritmasıyla değil, spektrum tepe noktalarından yaklaşık ipuçlarıyla değerlendirilir.</p><p class="small">Bu sürüm otomatik perde düzeltme (autotune), yapay zekâ kaynak ayırma veya stüdyo kalitesinde spektral gürültü giderme içermez.</p><p class="small">Ses işleme Web Audio API ve OfflineAudioContext kullanır. Özellikler cihaz, Safari sürümü ve bellek durumuna göre değişebilir.</p></div></section>
 
 </main>
 
-<nav aria-label="Ana gezinme">
-
-<button onclick="showSection('home')">Ana Sayfa</button>
-
-<button onclick="showSection('audio')">Ses</button>
-
-<button onclick="showSection('video')">Video</button>
-
-<button onclick="showSection('projects')">Projelerim</button>
-
-<button onclick="showSection('settings')">Ayarlar</button>
-
-</nav>
+<nav class="section-nav" aria-label="Ana gezinme"><button type="button" data-open="home" aria-current="page">Ana Sayfa</button><button type="button" data-open="audio">Ses</button><button type="button" data-open="video">Video</button><button type="button" data-open="projects">Projelerim</button><button type="button" data-open="settings">Ayarlar</button></nav>
 
 <script>
 
-"use strict";
+'use strict';
 
-const $=id=>document.getElementById(id);
+const $=id=>document.getElementById(id);const player=$('player'),video=$('videoPlayer');
 
-const player=$("player"),video=$("videoPlayer");
+const pageNames=['home','audio','video','projects','settings'];let audioUrl=null,videoUrl=null,ctx=null,playerSource=null,playerGraph=null,micStream=null,micSource=null,micGraph=null,micRecorder=null,micChunks=[],monitorMode='',tracks=[],trackAudio=[],lyrics=[],analysisData=null,recommendationData=null,videoRecorder=null,videoStream=null,videoTimer=null,videoFrame=0,videoGraph=null,exportBusy=false;
 
-let ctx=null,audioUrl=null,videoUrl=null,micStream=null,micRecorder=null,micChunks=[];
+const settingIds=['startDelay','fadeIn','fadeOut','tailDuration','subBass','bass','mid','upperMid','treble','reverbAmount','roomSize','reverbTime','predelay','reverbBrightness','echoAmount','echoDelay','echoFeedback','compression','threshold','ratio','attack','release','makeupGain','gate','deEss','presence','stereoWidth','leftLevel','rightLevel','vocalLevel','masterLevel'];
 
-let monitorSource=null,monitorGraph=null,monitorGain=null;
+const defaults={startDelay:0,fadeIn:0,fadeOut:0,tailDuration:3,subBass:0,bass:0,mid:0,upperMid:0,treble:0,reverbAmount:0,roomSize:40,reverbTime:2,predelay:20,reverbBrightness:50,echoAmount:0,echoDelay:.3,echoFeedback:25,compression:0,threshold:-18,ratio:3,attack:10,release:150,makeupGain:0,gate:0,deEss:0,presence:0,stereoWidth:100,leftLevel:0,rightLevel:0,vocalLevel:0,masterLevel:0};
 
-let playerGraph=null,videoGraph=null,exportRecorder=null,exportChunks=[],exportTimer=null;
+const db=v=>Math.pow(10,v/20);const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 
-let videoRecorder=null,videoStream=null,videoTimer=null,videoAnimation=null;
+function announce(s){$('status').textContent=s;}
 
-let tracks=[],lyrics=[],impulseKey="",impulseBuffer=null;
+function say(id,s){const e=$(id);if(e)e.textContent=s;}
 
-const ids=["startDelay","fadeIn","fadeOut","tailDuration","subBass","bass","mid","upperMid","treble","reverbAmount","roomSize","reverbTime","predelay","reverbBrightness","echoAmount","echoDelay","echoFeedback","compression","threshold","ratio","attack","release","makeupGain","gate","deEss","presence","stereoWidth","leftLevel","rightLevel","vocalLevel","masterLevel"];
+function showSection(name){if(!pageNames.includes(name))return;pageNames.forEach(n=>{const p=$(n);p.hidden=n!==name;p.classList.toggle('active',n===name)});document.querySelectorAll('.section-nav [data-open]').forEach(b=>{if(b.dataset.open===name)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});const h=$(name).querySelector('h2');if(h){h.setAttribute('tabindex','-1');h.focus({preventScroll:true});}window.scrollTo(0,0);announce(name==='audio'?'Ses Stüdyosu açıldı.':name==='video'?'Video Stüdyosu açıldı.':name==='projects'?'Projelerim açıldı.':name==='settings'?'Ayarlar açıldı.':'Ana sayfa açıldı.');}
 
-const db=v=>Math.pow(10,v/20);
+document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>showSection(b.dataset.open)));
 
-function announce(s){$("status").textContent=s;}
+function fmt(id,v){if(['startDelay','fadeIn','fadeOut','tailDuration','reverbTime'].includes(id))return Number(v).toFixed(1)+' saniye';if(id==='echoDelay')return Number(v).toFixed(2)+' saniye';if(id==='ratio')return Number(v).toFixed(1)+':1';if(['predelay','attack','release'].includes(id))return Number(v).toFixed(1)+' ms';if(['subBass','bass','mid','upperMid','treble','threshold','makeupGain','presence','leftLevel','rightLevel','vocalLevel','masterLevel'].includes(id))return Number(v).toFixed(1)+' dB';return Math.round(Number(v))+'%';}
 
-function showSection(name){
+function updateSetting(id){const e=$(id);if(!e)return;const o=$(id+'Value');if(o)o.textContent=fmt(id,e.value);if(playerGraph)applyGraph(playerGraph);if(micGraph)applyGraph(micGraph);}
 
-["home","audio","video","projects","settings"].forEach(x=>$(x).hidden=x!==name);
+settingIds.forEach(id=>$(id).addEventListener('input',()=>updateSetting(id)));
 
-const h=$(name).querySelector("h2");if(h){h.setAttribute("tabindex","-1");h.focus();}
+function audioContext(){const AC=window.AudioContext||window.webkitAudioContext;if(!AC)throw Error('Bu tarayıcı Web Audio özelliğini desteklemiyor.');if(!ctx)ctx=new AC();return ctx;}
 
-announce(name+" bölümü açıldı.");
+const impulseCache=new WeakMap();function makeImpulse(context,seconds,size){let cache=impulseCache.get(context);if(!cache){cache=new Map();impulseCache.set(context,cache);}const key=seconds.toFixed(2)+'-'+size.toFixed(2)+'-'+context.sampleRate;if(cache.has(key))return cache.get(key);const len=Math.max(1,Math.floor(context.sampleRate*seconds)),buf=context.createBuffer(2,len,context.sampleRate);for(let c=0;c<2;c++){const d=buf.getChannelData(c);for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2+size*3);}cache.set(key,buf);return buf;}
 
-}
+function buildGraph(context,source,destination,includeMonitor=true){const nodes={};let n=source;const bands=[['lowshelf',80,'subBass'],['peaking',220,'bass'],['peaking',800,'mid'],['peaking',2800,'upperMid'],['highshelf',9000,'treble']];nodes.eq=[];for(const [type,f,id] of bands){const q=context.createBiquadFilter();q.type=type;q.frequency.value=f;q.Q.value=.85;n.connect(q);n=q;nodes.eq.push({node:q,id});}const presence=context.createBiquadFilter();presence.type='peaking';presence.frequency.value=4200;presence.Q.value=1;n.connect(presence);presence.channelCount=2;presence.channelCountMode='explicit';presence.channelInterpretation='speakers';const deEssFilter=context.createBiquadFilter();deEssFilter.type='highshelf';deEssFilter.frequency.value=6500;presence.connect(deEssFilter);nodes.deEssFilter=deEssFilter;const gateAnalyser=context.createAnalyser(),gateGain=context.createGain();gateAnalyser.fftSize=1024;deEssFilter.connect(gateAnalyser);deEssFilter.connect(gateGain);nodes.gateAnalyser=gateAnalyser;nodes.gateGain=gateGain;const splitter=context.createChannelSplitter(2),merger=context.createChannelMerger(2),left=context.createGain(),right=context.createGain(),crossL=context.createGain(),crossR=context.createGain();gateGain.connect(splitter);splitter.connect(left,0);splitter.connect(crossL,1);splitter.connect(right,1);splitter.connect(crossR,0);left.connect(merger,0,0);crossL.connect(merger,0,0);right.connect(merger,0,1);crossR.connect(merger,0,1);nodes.left=left;nodes.right=right;nodes.crossL=crossL;nodes.crossR=crossR;const dry=context.createGain(),pre=context.createDelay(.25),conv=context.createConvolver(),tone=context.createBiquadFilter(),wet=context.createGain();tone.type='highshelf';tone.frequency.value=5000;merger.connect(dry);dry.connect(destination);merger.connect(pre);pre.connect(conv);conv.connect(tone);tone.connect(wet);wet.connect(destination);nodes.pre=pre;nodes.conv=conv;nodes.tone=tone;nodes.wet=wet;nodes.dry=dry;const echo=context.createDelay(1.6),feedback=context.createGain(),echoWet=context.createGain();merger.connect(echo);echo.connect(feedback);feedback.connect(echo);echo.connect(echoWet);echoWet.connect(destination);nodes.echo=echo;nodes.feedback=feedback;nodes.echoWet=echoWet;const comp=context.createDynamicsCompressor(),makeup=context.createGain(),vocal=context.createGain(),master=context.createGain(),output=context.createGain();destination.connect(comp);comp.connect(makeup);makeup.connect(vocal);vocal.connect(master);master.connect(output);nodes.comp=comp;nodes.makeup=makeup;nodes.vocal=vocal;nodes.master=master;nodes.output=output;if(includeMonitor)output.connect(context.destination);const streamDest=context.createMediaStreamDestination();output.connect(streamDest);nodes.streamDest=streamDest;nodes.destination=destination;nodes.gateTimer=setInterval(()=>{if(!nodes.gateAnalyser||context.state==='closed')return;const data=new Float32Array(nodes.gateAnalyser.fftSize);nodes.gateAnalyser.getFloatTimeDomainData(data);let sum=0;for(let i=0;i<data.length;i++)sum+=data[i]*data[i];const level=Math.sqrt(sum/data.length),amount=+$('gate').value,threshold=.002+amount*.00035,target=amount===0?1:(level<threshold?.08:1);nodes.gateGain.gain.setTargetAtTime(target,context.currentTime,.035);},45);applyGraph(nodes,context);return nodes;}
 
-function outputText(id,v){
+function applyGraph(g,context=ctx){if(!g||!context)return;const set=(p,v)=>{p.setTargetAtTime(v,context.currentTime,.025)};g.eq.forEach(x=>set(x.node.gain,+$(x.id).value));set(g.presence.gain,+$('presence').value);set(g.deEssFilter.gain,-(+$('deEss').value)*.12);const width=+$('stereoWidth').value/100,direct=(1+width)/2,cross=(1-width)/2;set(g.left.gain,db(+$('leftLevel').value)*direct);set(g.right.gain,db(+$('rightLevel').value)*direct);set(g.crossL.gain,db(+$('leftLevel').value)*cross);set(g.crossR.gain,db(+$('rightLevel').value)*cross);set(g.dry.gain,1);set(g.wet.gain,+$('reverbAmount').value/100*.65);set(g.pre.delayTime,+$('predelay').value/1000);g.conv.buffer=makeImpulse(context,+$('reverbTime').value,+$('roomSize').value/100);set(g.tone.gain,(+$('reverbBrightness').value-50)*.12);set(g.echo.delayTime,+$('echoDelay').value);set(g.feedback.gain,+$('echoFeedback').value/100*.82);set(g.echoWet.gain,+$('echoAmount').value/100*.7);const amt=+$('compression').value/100;set(g.comp.threshold,+$('threshold').value);set(g.comp.ratio,1+(+$('ratio').value-1)*amt);set(g.comp.attack,+$('attack').value/1000);set(g.comp.release,+$('release').value/1000);set(g.makeup.gain,db(+$('makeupGain').value));set(g.vocal.gain,db(+$('vocalLevel').value));set(g.master.gain,1);set(g.output.gain,db(+$('masterLevel').value));}
 
-if(["startDelay","fadeIn","fadeOut","tailDuration","reverbTime"].includes(id))return v.toFixed(1)+" saniye";
+async function ensureRunning(){const c=audioContext();if(c.state==='suspended')await c.resume();return c;}
 
-if(id==="echoDelay")return v.toFixed(2)+" saniye";
+async function getPlayerGraph(){const c=await ensureRunning();if(!playerSource){playerSource=c.createMediaElementSource(player);playerGraph=buildGraph(c,playerSource,c.createGain());}return playerGraph;}
 
-if(id==="ratio")return v.toFixed(1)+":1";
+async function playAudio(){if(!player.src)return announce('Önce ses dosyası seç.');try{await getPlayerGraph();player.pause();player.currentTime=0;const delay=+$('startDelay').value;if(delay)await new Promise(r=>setTimeout(r,delay*1000));await player.play();announce('Ses çalıyor.');}catch(e){announce('Ses başlatılamadı: '+e.message);}}
 
-if(["predelay","attack","release"].includes(id))return v.toFixed(1)+" ms";
- if(["subBass","bass","mid","upperMid","treble","threshold","makeupGain","presence","leftLevel","rightLevel","vocalLevel","masterLevel"].includes(id))return v.toFixed(1)+" dB";
+$('playBtn').onclick=playAudio;$('pauseBtn').onclick=()=>{player.pause();announce('Ses duraklatıldı.');};$('stopBtn').onclick=()=>{player.pause();player.currentTime=0;announce('Ses başa alındı.');};
 
-return v.toFixed(1)+"%";
+$('audioFile').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(!f)return;if(!f.type.startsWith('audio/')&&!/\.(mp3|wav|m4a|aac|ogg|opus|flac)$/i.test(f.name)){announce('Desteklenmeyen ses dosyası.');return;}if(audioUrl)URL.revokeObjectURL(audioUrl);audioUrl=URL.createObjectURL(f);player.pause();player.src=audioUrl;player.load();say('fileInfo','Dosya: '+f.name+'. Boyut: '+(f.size/1048576).toFixed(2)+' MB.');announce('Ses dosyası yüklendi.');});
 
-}
+async function stopMicResources(){if(micStream){micStream.getTracks().forEach(t=>t.stop());micStream=null;}if(micSource){try{micSource.disconnect();}catch(e){}micSource=null;}if(micGraph){try{clearInterval(micGraph.gateTimer);micGraph.output.disconnect();micGraph.streamDest.disconnect();}catch(e){}micGraph=null;}monitorMode='';}
 
-function updateOutput(id){const e=$(id),o=$(id+"Value");if(e&&o)o.textContent=outputText(id,Number(e.value));}
+async function startMonitor(effected){try{if(micRecorder&&micRecorder.state!=='inactive')throw Error('Kayıt sürerken canlı dinleme değiştirilemez. Önce kaydı bitir.');await stopMicResources();const c=await ensureRunning();micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});micSource=c.createMediaStreamSource(micStream);if(effected){micGraph=buildGraph(c,micSource,c.createGain());}else{const g=c.createGain();g.gain.value=db(+$('masterLevel').value);micSource.connect(g);g.connect(c.destination);micGraph={output:g};}monitorMode=effected?'Efektli':'Efektsiz';say('micStatus',monitorMode+' canlı dinleme açık. Kulaklık kullan.');announce(monitorMode+' canlı dinleme başladı.');}catch(e){await stopMicResources();say('micStatus','Mikrofon açılamadı: '+e.message);}}
 
-function makeImpulse(seconds,size){
+$('monitorEffects').onclick=()=>startMonitor(true);$('monitorDry').onclick=()=>startMonitor(false);$('stopMonitor').onclick=async()=>{if(micRecorder&&micRecorder.state!=='inactive'){say('micStatus','Kayıt sürüyor. Önce kaydı bitir.');return;}await stopMicResources();say('micStatus','Canlı dinleme kapalı.');announce('Canlı dinleme kapatıldı.');};
 
-if(!ctx)return null;
+function mimeAudio(){if(!window.MediaRecorder)return '';return ['audio/mp4','audio/webm;codecs=opus','audio/webm','audio/ogg;codecs=opus'].find(x=>MediaRecorder.isTypeSupported(x))||'';}
 
-const key=seconds+"-"+size+"-"+ctx.sampleRate;
+$('recordMic').onclick=async()=>{try{if(micRecorder&&micRecorder.state!=='inactive')throw Error('Kayıt zaten devam ediyor.');if(tracks.length>=8)throw Error('En fazla sekiz kayıt kanalı oluşturulabilir.');await stopMicResources();const c=await ensureRunning();micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});micSource=c.createMediaStreamSource(micStream);micGraph=buildGraph(c,micSource,c.createGain(),false);const mt=mimeAudio();micRecorder=new MediaRecorder(micGraph.streamDest.stream,mt?{mimeType:mt}:{});micChunks=[];micRecorder.ondataavailable=e=>{if(e.data&&e.data.size)micChunks.push(e.data)};micRecorder.onstop=()=>{const blob=new Blob(micChunks,{type:micRecorder.mimeType||'audio/webm'});tracks.push({name:'Vokal kanalı '+(tracks.length+1),blob,gain:1,pan:0,mute:false,solo:false});renderTracks();stopMicResources();say('micStatus','Kayıt tamamlandı ve gelişmiş kanallara eklendi.');announce('Vokal kaydı tamamlandı.');};micRecorder.start();say('micStatus','Mikrofon kaydı devam ediyor.');announce('Mikrofon kaydı başladı.');}catch(e){await stopMicResources();say('micStatus','Kayıt başlatılamadı: '+e.message);}};
+ $('stopMic').onclick=()=>{if(micRecorder&&micRecorder.state!=='inactive')micRecorder.stop();else say('micStatus','Aktif kayıt bulunmuyor.');};
 
-if(key===impulseKey&&impulseBuffer)return impulseBuffer;
+$('toggleTracks').onclick=()=>{const area=$('trackArea'),open=area.hidden;area.hidden=!open;$('toggleTracks').setAttribute('aria-expanded',String(open));$('toggleTracks').textContent=open?'Gelişmiş kayıt kanallarını gizle':'Gelişmiş kayıt kanallarını göster';if(open)$('trackArea').querySelector('h3')?.focus();};
 
-const len=Math.max(1,Math.floor(ctx.sampleRate*seconds));
+function renderTracks(){const box=$('tracks');box.replaceChildren();if(!tracks.length){box.textContent='Henüz kayıt kanalı yok.';return;}tracks.forEach((t,i)=>{const d=document.createElement('div');d.className='track';const h=document.createElement('h4');h.textContent=t.name;d.append(h);const gl=document.createElement('label');gl.textContent='Kanal ses seviyesi';const gain=document.createElement('input');gain.type='range';gain.min=0;gain.max=2;gain.step='.01';gain.value=t.gain;gain.setAttribute('aria-label',t.name+' ses seviyesi');gain.oninput=()=>t.gain=+gain.value;gl.append(gain);d.append(gl);const pl=document.createElement('label');pl.textContent='Stereo konumu';const pan=document.createElement('input');pan.type='range';pan.min=-1;pan.max=1;pan.step='.01';pan.value=t.pan;pan.setAttribute('aria-label',t.name+' stereo konumu');pan.oninput=()=>t.pan=+pan.value;pl.append(pan);d.append(pl);['mute','solo'].forEach(k=>{const lab=document.createElement('label');lab.className='checkline';const cb=document.createElement('input');cb.type='checkbox';cb.checked=t[k];cb.onchange=()=>t[k]=cb.checked;lab.append(cb,document.createTextNode(k==='mute'?'Sessize al':'Solo'));d.append(lab)});const play=document.createElement('button');play.textContent='Bu kanalı çal';play.onclick=()=>playTrack(i);d.append(play);const del=document.createElement('button');del.className='danger';del.textContent='Bu kanalı sil';del.onclick=()=>{tracks.splice(i,1);renderTracks()};d.append(del);box.append(d);});say('trackStatus',tracks.length+' kayıt kanalı var.');}
 
-const b=ctx.createBuffer(2,len,ctx.sampleRate);
+function stopTracks(){trackAudio.forEach(a=>{a.pause();a.src='';if(a._objectUrl)URL.revokeObjectURL(a._objectUrl)});trackAudio=[];announce('Kayıt kanalları durduruldu.');}function playTrack(i){const t=tracks[i];if(!t||t.mute)return;const url=URL.createObjectURL(t.blob),a=new Audio(url);a._objectUrl=url;a.volume=clamp(t.gain,0,1);a.onended=()=>{URL.revokeObjectURL(url);trackAudio=trackAudio.filter(x=>x!==a)};trackAudio.push(a);a.play().catch(e=>say('trackStatus','Kanal oynatılamadı: '+e.message));}
 
-for(let c=0;c<2;c++){
+$('playTracks').onclick=()=>{stopTracks();const solo=tracks.some(t=>t.solo);tracks.forEach(t=>{if(t.mute||(solo&&!t.solo))return;const url=URL.createObjectURL(t.blob),a=new Audio(url);a._objectUrl=url;a.volume=clamp(t.gain,0,1);a.onended=()=>{URL.revokeObjectURL(url);trackAudio=trackAudio.filter(x=>x!==a)};trackAudio.push(a);a.play().catch(()=>say('trackStatus','Bir kanal oynatılamadı.'));});announce('Kanallar birlikte başlatıldı.');};$('stopTracks').onclick=stopTracks;$('clearTracks').onclick=()=>{stopTracks();tracks=[];renderTracks();announce('Bütün kayıt kanalları silindi.');};
 
-const d=b.getChannelData(c);
+function wavFromBuffer(buffer){const channels=buffer.numberOfChannels,frames=buffer.length,bytes=44+frames*channels*2,ab=new ArrayBuffer(bytes),v=new DataView(ab);const write=(o,s)=>{for(let i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i));};write(0,'RIFF');v.setUint32(4,bytes-8,true);write(8,'WAVE');write(12,'fmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,channels,true);v.setUint32(24,buffer.sampleRate,true);v.setUint32(28,buffer.sampleRate*channels*2,true);v.setUint16(32,channels*2,true);v.setUint16(34,16,true);write(36,'data');v.setUint32(40,bytes-44,true);let o=44;for(let i=0;i<frames;i++)for(let c=0;c<channels;c++){const s=clamp(buffer.getChannelData(c)[i],-1,1);v.setInt16(o,s<0?s*32768:s*32767,true);o+=2;}return ab;}
 
-for(let i=0;i<len;i++)d[i]=(Math.random()*2-1)*Math.pow(1-i/len,2+size*4);
+function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),60000);}
 
-}
+async function decodeFile(file){const c=await ensureRunning();return c.decodeAudioData(await file.arrayBuffer());}
 
-impulseKey=key;impulseBuffer=b;return b;
+function applyOfflineGraph(oc,source,settings,inputBuffer){const get=id=>settings[id]??defaults[id];const gate=oc.createGain(),eq=[['lowshelf',80,'subBass'],['peaking',220,'bass'],['peaking',800,'mid'],['peaking',2800,'upperMid'],['highshelf',9000,'treble']];let n=source;for(const [type,f,id] of eq){const q=oc.createBiquadFilter();q.type=type;q.frequency.value=f;q.gain.value=get(id);n.connect(q);n=q;}const pres=oc.createBiquadFilter();pres.type='peaking';pres.frequency.value=4200;pres.Q.value=1;pres.gain.value=get('presence');pres.channelCount=2;pres.channelCountMode='explicit';pres.channelInterpretation='speakers';n.connect(pres);const deEss=oc.createBiquadFilter();deEss.type='highshelf';deEss.frequency.value=6500;deEss.gain.value=-get('deEss')*.12;pres.connect(deEss);deEss.connect(gate);const duration=oc.length/oc.sampleRate,step=.04,frameSize=1024,offset=get('startDelay');gate.gain.setValueAtTime(1,0);for(let t=0;t<duration-offset;t+=step){const ix=Math.min(inputBuffer.length-1,Math.floor(t*oc.sampleRate));let sum=0;const data=inputBuffer.getChannelData(0),end=Math.min(data.length,ix+frameSize);for(let j=ix;j<end;j++)sum+=data[j]*data[j];const level=Math.sqrt(sum/frameSize),threshold=.002+get('gate')*.00035;gate.gain.setValueAtTime(get('gate')===0||level>=threshold?1:.08,offset+t);}const splitter=oc.createChannelSplitter(2),merger=oc.createChannelMerger(2),l=oc.createGain(),r=oc.createGain(),cl=oc.createGain(),cr=oc.createGain(),width=get('stereoWidth')/100,direct=(1+width)/2,cross=(1-width)/2;gate.connect(splitter);splitter.connect(l,0);splitter.connect(cr,0);splitter.connect(r,1);splitter.connect(cl,1);l.gain.value=db(get('leftLevel'))*direct;r.gain.value=db(get('rightLevel'))*direct;cl.gain.value=db(get('leftLevel'))*cross;cr.gain.value=db(get('rightLevel'))*cross;l.connect(merger,0,0);cl.connect(merger,0,0);r.connect(merger,0,1);cr.connect(merger,0,1);const bus=oc.createGain(),pre=oc.createDelay(.25),conv=oc.createConvolver(),tone=oc.createBiquadFilter(),wet=oc.createGain();tone.type='highshelf';tone.frequency.value=5000;merger.connect(bus);merger.connect(pre);pre.delayTime.value=get('predelay')/1000;pre.connect(conv);conv.buffer=makeImpulse(oc,get('reverbTime'),get('roomSize')/100);conv.connect(tone);tone.gain.value=(get('reverbBrightness')-50)*.12;tone.connect(wet);wet.gain.value=get('reverbAmount')/100*.65;wet.connect(bus);const echo=oc.createDelay(1.6),fb=oc.createGain(),ew=oc.createGain();merger.connect(echo);echo.delayTime.value=get('echoDelay');echo.connect(fb);fb.gain.value=get('echoFeedback')/100*.82;fb.connect(echo);echo.connect(ew);ew.gain.value=get('echoAmount')/100*.7;ew.connect(bus);const comp=oc.createDynamicsCompressor();comp.threshold.value=get('threshold');comp.ratio.value=1+(get('ratio')-1)*get('compression')/100;comp.attack.value=get('attack')/1000;comp.release.value=get('release')/1000;const makeup=oc.createGain();makeup.gain.value=db(get('makeupGain'));const vocal=oc.createGain();vocal.gain.value=db(get('vocalLevel'));const master=oc.createGain();master.gain.value=db(get('masterLevel'));bus.connect(comp);comp.connect(makeup);makeup.connect(vocal);vocal.connect(master);master.connect(oc.destination);}
 
-}
+async function exportProcessed(){if(!player.src)throw Error('Önce ses dosyası yükle.');if(exportBusy)throw Error('Dışa aktarma zaten sürüyor.');exportBusy=true;say('exportStatus','Ses çözümleniyor ve işleniyor. iPhone belleğine göre biraz sürebilir.');try{const buffer=await decodeFile($('audioFile').files[0]);const settings={};settingIds.forEach(id=>settings[id]=+$(id).value);const delay=settings.startDelay,tail=settings.tailDuration,duration=buffer.duration,total=delay+duration+tail;const length=Math.ceil(total*buffer.sampleRate);if(length>buffer.sampleRate*60*15)throw Error('Bu sürümde dışa aktarma 15 dakikayla sınırlandırılmıştır.');const OC=window.OfflineAudioContext||window.webkitOfflineAudioContext;if(!OC)throw Error('Çevrimdışı ses işleme desteklenmiyor.');const oc=new OC(2,length,buffer.sampleRate),src=oc.createBufferSource();src.buffer=buffer;const gain=oc.createGain();src.connect(gain);applyOfflineGraph(oc,gain,settings,buffer);const fi=Math.min(settings.fadeIn,duration),fo=Math.min(settings.fadeOut,duration);gain.gain.setValueAtTime(0,0);gain.gain.setValueAtTime(0,delay);gain.gain.linearRampToValueAtTime(1,delay+Math.max(.001,fi));if(fo>0){gain.gain.setValueAtTime(1,delay+duration-fo);gain.gain.linearRampToValueAtTime(0,delay+duration);}else gain.gain.setValueAtTime(1,delay+duration);src.start(delay);const rendered=await oc.startRendering();downloadBlob(new Blob([wavFromBuffer(rendered)],{type:'audio/wav'}),'vokal-studyom-islenmis.wav');say('exportStatus','İşlenmiş WAV dosyası oluşturuldu.');announce('İşlenmiş ses dışa aktarıldı.');}finally{exportBusy=false;}}
+ $('exportAudio').onclick=()=>exportProcessed().catch(e=>{say('exportStatus','Dışa aktarma hatası: '+e.message);announce('Dışa aktarma başarısız.');});
 
-async function ensureContext(){
+async function exportTracksMix(){if(!tracks.length)throw Error('Dışa aktarılacak kayıt kanalı yok.');const c=await ensureRunning(),buffers=await Promise.all(tracks.map(t=>c.decodeAudioData(t.blob.slice(0)))),dur=Math.max(...buffers.map(b=>b.duration)),OC=window.OfflineAudioContext||window.webkitOfflineAudioContext,oc=new OC(2,Math.ceil((dur+1)*c.sampleRate),c.sampleRate),solo=tracks.some(t=>t.solo);buffers.forEach((b,i)=>{const t=tracks[i];if(t.mute||(solo&&!t.solo))return;const src=oc.createBufferSource(),g=oc.createGain(),p=oc.createStereoPanner();src.buffer=b;g.gain.value=t.gain;p.pan.value=t.pan;src.connect(g);g.connect(p);p.connect(oc.destination);src.start(0);});const out=await oc.startRendering();downloadBlob(new Blob([wavFromBuffer(out)],{type:'audio/wav'}),'vokal-studyom-kanal-miksi.wav');say('trackStatus','Kanallar WAV olarak mikslenip indirildi.');}
 
-const AC=window.AudioContext||window.webkitAudioContext;
+$('exportTracks').onclick=()=>exportTracksMix().catch(e=>say('trackStatus','Miksaj hatası: '+e.message));
 
-if(!AC)throw new Error("Web Audio desteklenmiyor.");
+function settingsNow(){const o={};settingIds.forEach(id=>o[id]=+$(id).value);o.lyrics=lyrics;return o;}
 
-if(!ctx)ctx=new AC();
+function applySettings(o){settingIds.forEach(id=>{if(Number.isFinite(Number(o[id]))){const e=$(id);e.value=clamp(Number(o[id]),+e.min,+e.max);updateSetting(id);}});lyrics=Array.isArray(o.lyrics)?o.lyrics:[];renderLyrics();}
 
-if(ctx.state==="suspended")await ctx.resume();
+const presets={clean:{compression:22,threshold:-22,ratio:3,reverbAmount:7,echoAmount:0,gate:8,deEss:12,presence:1},warm:{bass:2,mid:1,treble:-1,reverbAmount:12,compression:25,ratio:3},stage:{reverbAmount:28,roomSize:75,reverbTime:3,echoAmount:5},echo:{echoAmount:30,echoDelay:.38,echoFeedback:32,reverbAmount:12},radio:{compression:60,threshold:-25,ratio:5,makeupGain:3,bass:1,treble:2,presence:2}};
 
-}
+function setPreset(p){Object.entries(p).forEach(([id,v])=>{$(id).value=v;updateSetting(id);});}
 
-function buildGraph(source){
+$('applyPreset').onclick=()=>{const p=presets[$('preset').value];if(!p)return announce('Önce profil seç.');setPreset(p);announce('Hazır efekt profili uygulandı.');};$('resetEffects').onclick=()=>{applySettings(defaults);announce('Efekt ayarları sıfırlandı.');};
 
-const filters=[],freqs=[60,180,600,2500,9000],types=["lowshelf","peaking","peaking","peaking","highshelf"];
+function renderLyrics(){const box=$('lyricsList');box.replaceChildren();lyrics.forEach((x,i)=>{const d=document.createElement('div');d.className='track';const p=document.createElement('p');p.textContent=x.time.toFixed(1)+' saniye: '+x.text;const b=document.createElement('button');b.className='danger';b.textContent='Satırı sil';b.onclick=()=>{lyrics.splice(i,1);renderLyrics();};d.append(p,b);box.append(d);});}
 
-let node=source;
+$('addLyric').onclick=()=>{const text=$('lyricText').value.trim(),time=+$('lyricTime').value;if(!text||!Number.isFinite(time)||time<0)return announce('Şarkı sözü ve geçerli zaman gir.');lyrics.push({text,time});lyrics.sort((a,b)=>a.time-b.time);renderLyrics();$('lyricText').value='';announce('Şarkı sözü satırı eklendi.');};
 
-freqs.forEach((f,i)=>{
+function hzNote(hz){const n=Math.round(69+12*Math.log2(hz/440)),names=['Do','Do diyez','Re','Re diyez','Mi','Fa','Fa diyez','Sol','Sol diyez','La','La diyez','Si'];return names[(n%12+12)%12]+' '+(Math.floor(n/12)-1);}
 
-const q=ctx.createBiquadFilter();q.type=types[i];q.frequency.value=f;q.Q.value=1;node.connect(q);node=q;filters.push(q);
+function rmsOf(a){let s=0;for(let i=0;i<a.length;i++)s+=a[i]*a[i];return Math.sqrt(s/a.length);}
 
-});
+function yinPitch(data,sr){const n=data.length,minTau=Math.floor(sr/1100),maxTau=Math.min(Math.floor(sr/50),Math.floor(n/2));if(maxTau<=minTau)return null;const diff=new Float32Array(maxTau+1);for(let tau=1;tau<=maxTau;tau++){let sum=0;for(let i=0;i<maxTau;i++){const d=data[i]-data[i+tau];sum+=d*d;}diff[tau]=sum;}let running=0;const cmnd=new Float32Array(maxTau+1);cmnd[0]=1;for(let tau=1;tau<=maxTau;tau++){running+=diff[tau];cmnd[tau]=running?diff[tau]*tau/running:1;}let tau=minTau;while(tau<maxTau&&cmnd[tau]>.16)tau++;if(tau===maxTau)return null;while(tau+1<=maxTau&&cmnd[tau+1]<cmnd[tau])tau++;if(tau>=maxTau)return null;const better=tau+(cmnd[tau+1]-cmnd[tau-1])/(2*(2*cmnd[tau]-cmnd[tau-1]-cmnd[tau+1]));const hz=sr/better;return hz>=50&&hz<=1100?hz:null;}
 
-const presence=ctx.createBiquadFilter();presence.type="peaking";presence.frequency.value=4200;presence.Q.value=1;node.connect(presence);
+function spectralMetrics(data,sr){const n=data.length;let total=0,weighted=0,low=0,high=0;for(let k=1;k<n/2;k++){let re=0,im=0;for(let i=0;i<n;i+=4){const w=.5-.5*Math.cos(2*Math.PI*i/(n-1)),a=2*Math.PI*k*i/n;re+=data[i]*w*Math.cos(a);im-=data[i]*w*Math.sin(a);}const mag=Math.hypot(re,im);const hz=k*sr/n;total+=mag;weighted+=hz*mag;if(hz<500)low+=mag;if(hz>3000)high+=mag;}return{centroid:total?weighted/total:0,lowRatio:total?low/total:0,highRatio:total?high/total:0};}
 
-const dry=ctx.createGain(),pre=ctx.createDelay(.25),conv=ctx.createConvolver(),tone=ctx.createBiquadFilter(),wet=ctx.createGain();
+async function analyseVocal(){const file=$('audioFile').files[0];if(!file)throw Error('Önce analiz edilecek ses dosyasını seç.');say('analysisStatus','Ses cihazda analiz ediliyor.');const buf=await decodeFile(file);const original=buf.getChannelData(0),stride=Math.max(1,Math.round(buf.sampleRate/16000)),ch=new Float32Array(Math.floor(original.length/stride));for(let i=0;i<ch.length;i++)ch[i]=original[i*stride];const sr=buf.sampleRate/stride,windowSize=2048,hop=1024,pitches=[],levels=[];const maxSamples=Math.min(ch.length,sr*45);for(let start=0;start+windowSize<maxSamples;start+=hop){const frame=new Float32Array(windowSize);let mean=0;for(let i=0;i<windowSize;i++)mean+=ch[start+i];mean/=windowSize;for(let i=0;i<windowSize;i++)frame[i]=ch[start+i]-mean;const rms=rmsOf(frame);levels.push(rms);if(rms>.012){const hz=yinPitch(frame,sr);if(hz)pitches.push(hz);}}if(!pitches.length)throw Error('Net bir perde tespit edilemedi. Daha temiz ve tek sesli bir vokal kaydı dene.');const sorted=[...pitches].sort((a,b)=>a-b),median=sorted[Math.floor(sorted.length/2)],min=Math.min(...pitches),max=Math.max(...pitches),mean=pitches.reduce((a,b)=>a+b,0)/pitches.length,sd=Math.sqrt(pitches.reduce((a,b)=>a+(b-mean)**2,0)/pitches.length),stability=100*clamp(1-sd/Math.max(mean,1),0,1),peakFrameStart=Math.max(0,levels.indexOf(Math.max(...levels))*hop),spec=spectralMetrics(ch.subarray(peakFrameStart,Math.min(ch.length,peakFrameStart+4096)),sr),rms=rmsOf(ch.subarray(0,maxSamples)),peak=Math.max(...levels),dynamic=20*Math.log10(Math.max(peak,.00001)/Math.max(rms,.00001));let vibratoRate=0,vibratoStrength=0;if(pitches.length>20){const cents=pitches.map(v=>1200*Math.log2(v/median));let best=-1,bestLag=0;for(let lag=2;lag<=5;lag++){let sum=0,a=0,b=0;for(let i=lag;i<cents.length;i++){sum+=cents[i]*cents[i-lag];a+=cents[i]*cents[i];b+=cents[i-lag]*cents[i-lag];}const corr=sum/Math.sqrt(Math.max(a*b,1e-9));if(corr>best){best=corr;bestLag=lag;}}if(best>.25){vibratoRate=(sr/hop)/bestLag;vibratoStrength=best;}}const result={duration:buf.duration,median,min,max,mean,sd,stability,spec,rms,dynamic,count:pitches.length,vibratoRate,vibratoStrength};analysisData=result;const formantHint=spec.centroid<1500?'Daha koyu spektral parlaklık':spec.centroid>3000?'Daha parlak spektral dağılım':'Orta spektral parlaklık';$('analysisResults').replaceChildren();const rows=[['Tahmini temel frekans',median.toFixed(1)+' Hz'],['Yaklaşık nota',hzNote(median)],['Tespit edilen perde aralığı',hzNote(min)+' – '+hzNote(max)],['Perde değişkenliği',sd.toFixed(1)+' Hz standart sapma'],['Perde kararlılığı göstergesi',stability.toFixed(0)+' / 100'],['Vibrato ipucu',vibratoRate? vibratoRate.toFixed(1)+' Hz yaklaşık salınım; güven '+Math.round(vibratoStrength*100)+'%':'Belirgin düzenli vibrato saptanmadı'],['Ortalama spektral parlaklık',spec.centroid.toFixed(0)+' Hz merkez'],['Düşük frekans payı',Math.round(spec.lowRatio*100)+'%'],['Üst frekans payı',Math.round(spec.highRatio*100)+'%'],['Dinamik fark tahmini',dynamic.toFixed(1)+' dB'],['Formant/rezonans ipucu',formantHint+'; formant ölçümü değildir']];rows.forEach(([k,v])=>{const p=document.createElement('p');p.textContent=k+': '+v;$('analysisResults').append(p);});say('analysisStatus','Analiz tamamlandı. '+pitches.length+' perde örneği değerlendirildi.');announce('Vokal analizi tamamlandı.');return result;}
 
-const echo=ctx.createDelay(2.1),feedback=ctx.createGain(),echoWet=ctx.createGain();
+$('analyseBtn').onclick=$('analyseBtn2').onclick=()=>analyseVocal().catch(e=>{say('analysisStatus','Analiz yapılamadı: '+e.message);announce('Vokal analizi tamamlanamadı.');});
 
-const mix=ctx.createGain(),comp=ctx.createDynamicsCompressor(),makeup=ctx.createGain(),vocal=ctx.createGain(),master=ctx.createGain();
+function buildRecommendation(){if(!analysisData)throw Error('Önce vokal analizi yap.');const p=$('targetProfile').value,r={...defaults};if(analysisData.spec.centroid<1800){r.treble=1.5;r.upperMid=1;}else if(analysisData.spec.centroid>3200){r.treble=-1.5;r.upperMid=-.5;}if(analysisData.stability<55){r.compression=20;r.ratio=2.5;}else{r.compression=28;r.ratio=3;}r.threshold=-22;r.attack=12;r.release=160;r.makeupGain=1;if(p==='natural'){r.reverbAmount=5;r.echoAmount=0;r.deEss=10;r.gate=5;}if(p==='studio'){r.reverbAmount=10;r.compression=35;r.deEss=18;r.presence=1.5;}if(p==='warm'){r.bass=1.5;r.treble=-1;r.reverbAmount=12;r.compression=25;}if(p==='bright'){r.upperMid=1.5;r.treble=1;r.deEss=22;r.reverbAmount=7;}recommendationData=r;const summary='Profil: '+$('targetProfile').selectedOptions[0].text+'. EQ önerileri: Bas '+r.bass+' dB, üst orta '+r.upperMid+' dB, tiz '+r.treble+' dB. Compressor '+r.compression+'%. Reverb '+r.reverbAmount+'%. Bunlar başlangıç önerileridir; kulağınla karşılaştır.';say('recommendation',summary);announce('Efekt önerileri hazırlandı.');return r;}
+ $('recommendBtn').onclick=()=>{try{buildRecommendation()}catch(e){say('recommendation',e.message)}};$('applyRecommendation').onclick=()=>{try{const r=recommendationData||buildRecommendation();setPreset(r);announce('Önerilen ayarlar uygulandı.');}catch(e){say('recommendation',e.message)}};
 
-const destination=ctx.createMediaStreamDestination();
+function openDB(){return new Promise((resolve,reject)=>{if(!('indexedDB'in window))return reject(Error('Bu tarayıcı yerel proje kaydını desteklemiyor.'));const req=indexedDB.open('VokalStudyomProDB',2);req.onupgradeneeded=()=>{const d=req.result;if(!d.objectStoreNames.contains('projects'))d.createObjectStore('projects')};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});}
 
-const output=ctx.createGain();
+async function saveProject(){const d=await openDB();return new Promise((resolve,reject)=>{const tx=d.transaction('projects','readwrite');tx.objectStore('projects').put({settings:settingsNow(),tracks},'main');tx.oncomplete=()=>{d.close();say('projectStatus','Proje ve kayıt kanalları bu cihaza kaydedildi.');announce('Proje kaydedildi.');resolve()};tx.onerror=()=>{d.close();reject(tx.error)};});}
 
-presence.connect(dry);dry.connect(mix);
- presence.connect(pre);pre.connect(conv);conv.connect(tone);tone.connect(wet);wet.connect(mix);
+async function loadProject(){const d=await openDB();return new Promise((resolve,reject)=>{const tx=d.transaction('projects','readonly'),req=tx.objectStore('projects').get('main');req.onsuccess=()=>{if(!req.result){d.close();say('projectStatus','Kayıtlı proje bulunamadı.');resolve();return;}applySettings(req.result.settings||{});tracks=Array.isArray(req.result.tracks)?req.result.tracks:[];renderTracks();d.close();say('projectStatus','Proje yüklendi.');announce('Proje yüklendi.');resolve()};req.onerror=()=>{d.close();reject(req.error)};});}
 
-presence.connect(echo);echo.connect(feedback);feedback.connect(echo);echo.connect(echoWet);echoWet.connect(mix);
+function blobData(blob){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=()=>reject(r.error);r.readAsDataURL(blob);});}
 
-mix.connect(comp);comp.connect(makeup);makeup.connect(vocal);vocal.connect(master);master.connect(output);
+$('saveProject').onclick=()=>saveProject().catch(e=>say('projectStatus','Kaydetme hatası: '+e.message));$('loadProject').onclick=()=>loadProject().catch(e=>say('projectStatus','Yükleme hatası: '+e.message));
 
-output.connect(ctx.destination);output.connect(destination);
+$('exportProject').onclick=async()=>{try{const data={version:2,settings:settingsNow(),tracks:[]};for(const t of tracks)data.tracks.push({...t,blob:await blobData(t.blob)});downloadBlob(new Blob([JSON.stringify(data)],{type:'application/json'}),'vokal-studyom-proje.json');say('projectStatus','Proje dosyası dışa aktarıldı.');}catch(e){say('projectStatus','Proje dışa aktarma hatası: '+e.message)}};
 
-const g={filters,presence,dry,pre,conv,tone,wet,echo,feedback,echoWet,comp,makeup,vocal,master,output,destination};
+$('projectFile').onchange=async e=>{const f=e.target.files&&e.target.files[0];if(!f)return;try{const data=JSON.parse(await f.text());if(!data||typeof data!=='object')throw Error('Geçersiz proje dosyası.');applySettings(data.settings||{});tracks=[];for(const t of Array.isArray(data.tracks)?data.tracks:[]){if(typeof t.blob!=='string'||!t.blob.startsWith('data:'))continue;const res=await fetch(t.blob),blob=await res.blob();tracks.push({...t,blob});}renderTracks();say('projectStatus','Proje dosyası içe aktarıldı.');}catch(err){say('projectStatus','Proje dosyası okunamadı: '+err.message)}};
 
-applyGraph(g);return g;
+$('videoFile').onchange=e=>{const f=e.target.files&&e.target.files[0];if(!f)return;if(!f.type.startsWith('video/')&&!/\.(mp4|mov|m4v|webm)$/i.test(f.name)){say('videoInfo','Geçersiz video dosyası.');return;}if(videoUrl)URL.revokeObjectURL(videoUrl);videoUrl=URL.createObjectURL(f);video.pause();video.src=videoUrl;video.load();video.onloadedmetadata=()=>{$('videoEnd').value=Number.isFinite(video.duration)?video.duration.toFixed(1):'0';$('videoStart').value='0';};say('videoInfo','Video: '+f.name+'; '+(f.size/1048576).toFixed(2)+' MB.');say('videoStatus','Video yüklendi.');};
 
-}
+$('setVideoStart').onclick=()=>{if(!video.src)return announce('Önce video yükle.');$('videoStart').value=video.currentTime.toFixed(1);announce('Video başlangıç noktası ayarlandı.');};$('setVideoEnd').onclick=()=>{if(!video.src)return announce('Önce video yükle.');$('videoEnd').value=video.currentTime.toFixed(1);announce('Video bitiş noktası ayarlandı.');};
 
-function applyGraph(g){
+function videoRange(){const s=+$('videoStart').value,e=+$('videoEnd').value||video.duration;if(!video.src||!Number.isFinite(video.duration))throw Error('Önce geçerli bir video yükle.');if(s<0||e<=s||e>video.duration)throw Error('Başlangıç ve bitiş zamanlarını kontrol et.');return{s,e};}
 
-if(!g||!ctx)return;
+$('previewVideo').onclick=()=>{try{const {s,e}=videoRange();video.ontimeupdate=()=>{if(video.currentTime>=e){video.pause();video.ontimeupdate=null;}};video.currentTime=s;video.play().catch(err=>say('videoStatus','Önizleme başlatılamadı: '+err.message));}catch(e){say('videoStatus',e.message)}};
 
-const p=(a,v)=>a.setTargetAtTime(v,ctx.currentTime,.025);
+function waitEvent(el,event){return new Promise((resolve,reject)=>{const done=()=>{cleanup();resolve()},fail=()=>{cleanup();reject(Error('Video '+event+' olayı tamamlanamadı.'))},cleanup=()=>{el.removeEventListener(event,done);el.removeEventListener('error',fail)};el.addEventListener(event,done,{once:true});el.addEventListener('error',fail,{once:true});});}
 
-["subBass","bass","mid","upperMid","treble"].forEach((id,i)=>p(g.filters[i].gain,+$(id).value));
+async function seekVideo(time){if(Math.abs(video.currentTime-time)<.02)return;const pending=waitEvent(video,'seeked');video.currentTime=time;await pending;}
 
-p(g.presence.gain,+$("presence").value);
+$('exportVideo').onclick=async()=>{try{const {s,e}=videoRange();if(!HTMLCanvasElement.prototype.captureStream||!window.MediaRecorder)throw Error('Bu Safari sürümünde video dışa aktarma desteklenmiyor.');if(videoRecorder&&videoRecorder.state!=='inactive')throw Error('Video dışa aktarma zaten sürüyor.');await ensureRunning();if(!videoGraph){const source=ctx.createMediaElementSource(video);videoGraph=buildGraph(ctx,source,ctx.createGain());}const canvas=document.createElement('canvas');canvas.width=video.videoWidth||1280;canvas.height=video.videoHeight||720;const c=canvas.getContext('2d');if(!c)throw Error('Video görüntü alanı oluşturulamadı.');const mime=['video/mp4','video/webm;codecs=vp9,opus','video/webm'].find(x=>MediaRecorder.isTypeSupported(x));if(!mime)throw Error('Desteklenen video kayıt biçimi bulunamadı.');await seekVideo(s);videoStream=canvas.captureStream(30);videoGraph.streamDest.stream.getAudioTracks().forEach(t=>videoStream.addTrack(t));let chunks=[];videoRecorder=new MediaRecorder(videoStream,{mimeType:mime});videoRecorder.ondataavailable=x=>{if(x.data&&x.data.size)chunks.push(x.data)};videoRecorder.onstop=()=>{cancelAnimationFrame(videoFrame);videoStream&&videoStream.getTracks().forEach(t=>t.stop());const ext=mime.includes('mp4')?'mp4':'webm';downloadBlob(new Blob(chunks,{type:mime}),'vokal-studyom-video.'+ext);say('videoStatus','Video dışa aktarma tamamlandı.');};const draw=()=>{if(video.readyState>=2)c.drawImage(video,0,0,canvas.width,canvas.height);videoFrame=requestAnimationFrame(draw)};draw();videoRecorder.start();await video.play();say('videoStatus','Video dışa aktarılıyor.');videoTimer=setInterval(()=>{if(video.currentTime>=e||video.ended){clearInterval(videoTimer);video.pause();if(videoRecorder&&videoRecorder.state!=='inactive')videoRecorder.stop();}},100); }catch(e){clearInterval(videoTimer);if(videoRecorder&&videoRecorder.state!=='inactive')videoRecorder.stop();if(videoStream)videoStream.getTracks().forEach(t=>t.stop());cancelAnimationFrame(videoFrame);say('videoStatus','Video dışa aktarma hatası: '+e.message);}};
 
-p(g.dry.gain,1);
+$('stopVideoExport').onclick=()=>{clearInterval(videoTimer);if(videoRecorder&&videoRecorder.state!=='inactive')videoRecorder.stop();video.pause();if(videoStream)videoStream.getTracks().forEach(t=>t.stop());cancelAnimationFrame(videoFrame);say('videoStatus','Video dışa aktarma durduruldu.');};
+ window.addEventListener('beforeunload',()=>{if(audioUrl)URL.revokeObjectURL(audioUrl);if(videoUrl)URL.revokeObjectURL(videoUrl);if(micStream)micStream.getTracks().forEach(t=>t.stop());if(videoStream)videoStream.getTracks().forEach(t=>t.stop());trackAudio.forEach(a=>a.pause());});
 
-p(g.wet.gain,+$("reverbAmount").value/100);
-
-p(g.pre.delayTime,+$("predelay").value/1000);
-
-p(g.tone.gain,(+$("reverbBrightness").value-50)*.24);
- g.conv.buffer=makeImpulse(+$("reverbTime").value,+$("roomSize").value/100);
-
-p(g.echo.delayTime,+$("echoDelay").value);
-
-p(g.feedback.gain,+$("echoFeedback").value/100);
-
-p(g.echoWet.gain,+$("echoAmount").value/100);
-
-const amount=+$("compression").value/100;
-
-p(g.comp.threshold,+$("threshold").value);
-
-p(g.comp.ratio,1+(+$("ratio").value-1)*amount);
-
-p(g.comp.attack,+$("attack").value/1000);
-
-p(g.comp.release,+$("release").value/1000);
-
-p(g.makeup.gain,db(+$("makeupGain").value));
-
-p(g.vocal.gain,db(+$("vocalLevel").value));
-
-p(g.master.gain,1);
-
-p(g.output.gain,db(+$("masterLevel").value));
-
-}
-
-async function buildPlayerGraph(){
-
-await ensureContext();
-
-if(!playerGraph){
-
-const source=ctx.createMediaElementSource(player);
-
-playerGraph=buildGraph(source);
-
-}
-
-applyGraph(playerGraph);return playerGraph;
-
-}
-
-async function playAudio(){
-
-if(!player.src)return announce("Önce ses dosyası seç.");
-
-try{
-
-await buildPlayerGraph();player.pause();player.currentTime=0;
-
-const delay=+$("startDelay").value;
-
-if(delay)await new Promise(r=>setTimeout(r,delay*1000));
-
-await player.play();announce("Ses çalıyor.");
-
-}catch(e){announce("Ses başlatılamadı: "+e.message);}
-
-}
-
-function pauseAudio(){player.pause();announce("Ses duraklatıldı.");}
-
-function stopAudio(){player.pause();player.currentTime=0;announce("Ses başa alındı.");}
-
-$("audioFile").addEventListener("change",async e=>{
-
-const f=e.target.files&&e.target.files[0];if(!f)return;
-
-if(!f.type.startsWith("audio/"))return announce("Geçerli bir ses dosyası seç.");
-
-if(audioUrl)URL.revokeObjectURL(audioUrl);
-
-audioUrl=URL.createObjectURL(f);player.src=audioUrl;player.load();
-
-$("fileInfo").textContent="Dosya: "+f.name+"; boyut: "+(f.size/1048576).toFixed(2)+" MB.";
-
-playerGraph=null;
-
-announce("Ses dosyası yüklendi.");
-
-});
-
-ids.forEach(id=>{
-
-$(id).addEventListener("input",()=>{
-
-updateOutput(id);
-
-if(playerGraph)applyGraph(playerGraph);
-
-if(videoGraph)applyGraph(videoGraph);
- if(monitorGraph)applyGraph(monitorGraph);
-
-});
-
-updateOutput(id);
-
-});
-
-function supportedMime(){
-
-if(!window.MediaRecorder)return "";
-
-return ["audio/mp4","audio/webm;codecs=opus","audio/webm","audio/ogg;codecs=opus"].find(x=>MediaRecorder.isTypeSupported(x))||"";
-
-}
-
-function extension(m){return m.includes("mp4")?"m4a":m.includes("ogg")?"ogg":"webm";}
-
-async function getMic(){
-
-if(!navigator.mediaDevices?.getUserMedia)throw new Error("Mikrofon erişimi desteklenmiyor.");
-
-return navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});
-
-}
-
-async function startMonitor(withEffects){
-
-try{
-
-await ensureContext();
-
-if(!micStream)micStream=await getMic();
-
-if(monitorSource)monitorSource.disconnect();
-
-monitorSource=ctx.createMediaStreamSource(micStream);
-
-if(withEffects){
-
-monitorGraph=buildGraph(monitorSource);
-
-monitorGain=null;
-
-}else{
- monitorGraph=null;monitorGain=ctx.createGain();monitorGain.gain.value=db(+$("masterLevel").value);
-
-monitorSource.connect(monitorGain);monitorGain.connect(ctx.destination);
-
-}
-
-$("micStatus").textContent=withEffects?"Efektli canlı dinleme açık.":"Efektsiz canlı dinleme açık.";
-
-announce("Canlı mikrofon dinlemesi başladı. Kulaklık kullan.");
-
-}catch(e){announce("Mikrofon açılamadı: "+e.message);}
-
-}
-
-function stopMonitor(){
-
-if(monitorSource){try{monitorSource.disconnect();}catch(e){}monitorSource=null;}
-
-if(monitorGraph){try{monitorGraph.output.disconnect();}catch(e){}monitorGraph=null;}
-
-if(monitorGain){try{monitorGain.disconnect();}catch(e){}monitorGain=null;}
-
-if(micStream&&!micRecorder){micStream.getTracks().forEach(t=>t.stop());micStream=null;}
-
-$("micStatus").textContent="Canlı dinleme kapalı.";announce("Canlı dinleme kapatıldı.");
-
-}
-
-async function startMicRecording(){
-
-try{
-
-await ensureContext();
-
-if(micRecorder&&micRecorder.state!=="inactive")return announce("Kayıt zaten devam ediyor.");
-
-if(tracks.length>=8)return announce("En fazla 8 kayıt kanalı oluşturabilirsin.");
-
-micStream=await getMic();
-
-const source=ctx.createMediaStreamSource(micStream);
-
-const g=buildGraph(source);
-
-const mime=supportedMime();
-
-if(!window.MediaRecorder)throw new Error("MediaRecorder desteklenmiyor.");
-
-micChunks=[];
-
-micRecorder=new MediaRecorder(g.destination.stream,mime?{mimeType:mime}:{});
-
-micRecorder.ondataavailable=e=>{if(e.data.size)micChunks.push(e.data);};
-
-micRecorder.onstop=()=>{
-
-const type=micRecorder.mimeType||"audio/webm";
-
-const blob=new Blob(micChunks,{type});
-
-tracks.push({name:"Vokal kanalı "+(tracks.length+1),blob,gain:1,pan:0,mute:false,solo:false});
-
-renderTracks();
-
-micStream?.getTracks().forEach(t=>t.stop());micStream=null;
-
-$("micStatus").textContent="Kayıt tamamlandı ve yeni kanal eklendi.";
-
-announce("Vokal kaydı tamamlandı.");
-
-};
-
-micRecorder.start();
-
-$("micStatus").textContent="Mikrofon kaydı devam ediyor.";
-
-announce("Mikrofon kaydı başladı.");
-
-}catch(e){micStream?.getTracks().forEach(t=>t.stop());micStream=null;announce("Kayıt başlatılamadı: "+e.message);}
-
-}
-
-function stopMicRecording(){
-
-if(micRecorder&&micRecorder.state!=="inactive")micRecorder.stop();
-
-else announce("Devam eden mikrofon kaydı yok.");
-
-}
-
-function renderTracks(){
-
-const box=$("tracks");box.replaceChildren();
-
-if(!tracks.length){box.textContent="Henüz kayıt kanalı yok.";return;}
-
-tracks.forEach((t,i)=>{
-
-const d=document.createElement("div");d.className="track";
-
-const h=document.createElement("h3");h.textContent=t.name;d.append(h);
-
-const gain=document.createElement("input");gain.type="range";gain.min=0;gain.max=2;gain.step=".01";gain.value=t.gain;gain.setAttribute("aria-label",t.name+" ses seviyesi");
-
-gain.oninput=()=>t.gain=+gain.value;d.append(gain);
-
-const pan=document.createElement("input");pan.type="range";pan.min=-1;pan.max=1;pan.step=".01";pan.value=t.pan;pan.setAttribute("aria-label",t.name+" stereo konumu");
- pan.oninput=()=>t.pan=+pan.value;d.append(pan);
-
-const mute=document.createElement("input");mute.type="checkbox";mute.checked=t.mute;mute.setAttribute("aria-label",t.name+" sessize al");
-
-mute.onchange=()=>t.mute=mute.checked;d.append(mute,document.createTextNode(" Sessize al "));
-
-const solo=document.createElement("input");solo.type="checkbox";solo.checked=t.solo;solo.setAttribute("aria-label",t.name+" solo");
-
-solo.onchange=()=>t.solo=solo.checked;d.append(solo,document.createTextNode(" Solo "));
-
-const play=document.createElement("button");play.textContent="Kanalı çal";play.onclick=()=>playTrack(i);d.append(play);
-
-const del=document.createElement("button");del.textContent="Kanalı sil";del.className="danger";del.onclick=()=>{tracks.splice(i,1);renderTracks();};d.append(del);
-
-box.append(d);
-
-});
-
-}
-
-let trackPlayers=[];
-
-function stopTracks(){trackPlayers.forEach(a=>{a.pause();a.src="";});trackPlayers=[];announce("Kanallar durduruldu.");}
-
-function playTrack(i){
-
-const t=tracks[i];if(!t)return;
-
-const a=new Audio(URL.createObjectURL(t.blob));a.volume=t.mute?0:t.gain;
-
-trackPlayers.push(a);a.play().catch(e=>announce("Kanal oynatılamadı: "+e.message));
-
-}
-
-function playTracks(){
-
-stopTracks();
-
-const solo=tracks.some(t=>t.solo);
-
-tracks.forEach(t=>{
-
-if(t.mute||(solo&&!t.solo))return;
-
-const a=new Audio(URL.createObjectURL(t.blob));a.volume=Math.min(1,t.gain);trackPlayers.push(a);a.play().catch(()=>{});
-
-});
-
-announce("Kayıt kanalları birlikte çalınıyor.");
-
-}
-
-async function decodeBlob(blob){
-
-await ensureContext();const data=await blob.arrayBuffer();return ctx.decodeAudioData(data);
-
-}
-
-async function exportTracks(){
-
-if(!tracks.length)return announce("Dışa aktarılacak kanal yok.");
-
-try{
-
-await ensureContext();
-
-const buffers=await Promise.all(tracks.map(t=>decodeBlob(t.blob)));
-
-const duration=Math.max(...buffers.map(b=>b.duration));
-
-const offline=new OfflineAudioContext(2,Math.ceil((duration+2)*ctx.sampleRate),ctx.sampleRate);
- buffers.forEach((b,i)=>{
-
-const t=tracks[i];if(t.mute||tracks.some(x=>x.solo)&&!t.solo)return;
-
-const src=offline.createBufferSource();src.buffer=b;
-
-const gain=offline.createGain();gain.gain.value=t.gain;
-
-const pan=offline.createStereoPanner();pan.pan.value=t.pan;
-
-src.connect(gain);gain.connect(pan);pan.connect(offline.destination);src.start(0);
-
-});
-
-const rendered=await offline.startRendering();
-
-const wav=audioBufferToWav(rendered);
-
-downloadBlob(new Blob([wav],{type:"audio/wav"}),"vokal-studyom-kanal-miksi.wav");
-
-$("trackStatus").textContent="Kanal miksajı WAV olarak oluşturuldu.";
-
-}catch(e){$("trackStatus").textContent="Miksaj hatası: "+e.message;}
-
-}
-
-function audioBufferToWav(buffer){
-
-const channels=buffer.numberOfChannels,length=buffer.length*channels*2+44;
-
-const ab=new ArrayBuffer(length),v=new DataView(ab);
-
-function str(o,s){for(let i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i));}
-
-str(0,"RIFF");v.setUint32(4,length-8,true);str(8,"WAVE");str(12,"fmt ");v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,channels,true);v.setUint32(24,buffer.sampleRate,true);v.setUint32(28,buffer.sampleRate*channels*2,true);v.setUint16(32,channels*2,true);v.setUint16(34,16,true);str(36,"data");v.setUint32(40,length-44,true);
-
-let offset=44;
-
-for(let i=0;i<buffer.length;i++)for(let c=0;c<channels;c++){
-
-let s=Math.max(-1,Math.min(1,buffer.getChannelData(c)[i]));
-
-v.setInt16(offset,s<0?s*32768:s*32767,true);offset+=2;
-
-}
-
-return ab;
-
-}
-
-async function exportProcessedAudio(){
-
-if(!player.src)return announce("Önce ses dosyası yükle.");
-
-if(!window.MediaRecorder)return announce("Bu tarayıcı ses dışa aktarmayı desteklemiyor.");
-
-try{
-
-const g=await buildPlayerGraph();
-
-if(exportRecorder&&exportRecorder.state!=="inactive")return announce("Dışa aktarma zaten sürüyor.");
-
-exportChunks=[];const mime=supportedMime();
-
-exportRecorder=new MediaRecorder(g.destination.stream,mime?{mimeType:mime}:{});
- exportRecorder.ondataavailable=e=>{if(e.data.size)exportChunks.push(e.data);};
-
-exportRecorder.onstop=()=>{
-
-const type=exportRecorder.mimeType||"audio/webm";
-
-downloadBlob(new Blob(exportChunks,{type}),"vokal-studyom-islenmis-ses."+extension(type));
-
-$("exportStatus").textContent="Ses dosyası hazır.";
-
-};
-
-player.pause();player.currentTime=0;
-
-const delay=+$("startDelay").value,fadeIn=+$("fadeIn").value,fadeOut=+$("fadeOut").value,tail=+$("tailDuration").value;
-
-const duration=player.duration;
-
-if(!Number.isFinite(duration)||duration<=0)throw new Error("Ses süresi okunamadı.");
-
-exportRecorder.start();
-
-$("exportStatus").textContent="Dışa aktarma devam ediyor.";
-
-await new Promise(r=>setTimeout(r,delay*1000));
-
-await player.play();
-
-const now=ctx.currentTime;
-
-g.output.gain.cancelScheduledValues(now);
-
-g.output.gain.setValueAtTime(0,now);
-
-g.output.gain.linearRampToValueAtTime(db(+$("masterLevel").value),now+Math.max(.01,fadeIn));
-
-const endTime=now+duration;
- if(fadeOut>0&&fadeOut<duration){
-
-g.output.gain.setValueAtTime(db(+$("masterLevel").value),endTime-fadeOut);
-
-g.output.gain.linearRampToValueAtTime(0,endTime);
-
-}
-
-exportTimer=setTimeout(()=>{
-
-player.pause();
-
-if(exportRecorder&&exportRecorder.state!=="inactive")exportRecorder.stop();
-
-g.output.gain.cancelScheduledValues(ctx.currentTime);g.output.gain.setValueAtTime(db(+$("masterLevel").value),ctx.currentTime);
-
-},(duration+tail)*1000);
-
-$("exportStatus").textContent="Ses işlenerek kaydediliyor.";
-
-}catch(e){$("exportStatus").textContent="Dışa aktarma hatası: "+e.message;stopExport();}
-
-}
-
-function stopExport(){
-
-clearTimeout(exportTimer);
-
-if(exportRecorder&&exportRecorder.state!=="inactive")exportRecorder.stop();
-
-player.pause();$("exportStatus").textContent="Dışa aktarma durduruldu.";
-
-}
-
-function downloadBlob(blob,name){
-
-const url=URL.createObjectURL(blob),a=document.createElement("a");
-
-a.href=url;a.download=name;document.body.append(a);a.click();a.remove();
- setTimeout(()=>URL.revokeObjectURL(url),60000);
-
-}
-
-function addLyric(){
-
-const text=$("lyricText").value.trim(),time=+$("lyricTime").value;
-
-if(!text||!Number.isFinite(time)||time<0)return announce("Şarkı sözü ve geçerli zaman gir.");
-
-lyrics.push({text,time});lyrics.sort((a,b)=>a.time-b.time);renderLyrics();$("lyricText").value="";
-
-announce("Söz satırı eklendi.");
-
-}
-
-function renderLyrics(){
-
-const box=$("lyricsList");box.replaceChildren();
-
-lyrics.forEach((x,i)=>{
-
-const d=document.createElement("div");d.className="track";
-
-const p=document.createElement("p");p.textContent=x.time.toFixed(1)+" saniye: "+x.text;
-
-const b=document.createElement("button");b.className="danger";b.textContent="Sil";b.onclick=()=>{lyrics.splice(i,1);renderLyrics();};
-
-d.append(p,b);box.append(d);
-
-});
-
-}
-
-const presets={
-
-clean:{compression:25,threshold:-22,ratio:3,reverbAmount:8,echoAmount:0,gate:10,deEss:15,presence:2},
-
-warm:{bass:2,mid:1,treble:-1,reverbAmount:15,compression:30,ratio:3},
- stage:{reverbAmount:35,roomSize:75,reverbTime:3,echoAmount:8},
-
-echo:{echoAmount:35,echoDelay:.4,echoFeedback:35,reverbAmount:15},
-
-radio:{compression:65,threshold:-25,ratio:5,makeupGain:3,bass:1,treble:2,presence:3}
-
-};
-
-function applyPreset(){
-
-const p=presets[$("preset").value];if(!p)return announce("Önce profil seç.");
-
-Object.entries(p).forEach(([id,v])=>{$(id).value=v;updateOutput(id);});
-
-if(playerGraph)applyGraph(playerGraph);announce("Profil uygulandı.");
-
-}
-
-function resetEffects(){
-
-ids.forEach(id=>{$(id).value=$(id).defaultValue;updateOutput(id);});
-
-if(playerGraph)applyGraph(playerGraph);announce("Efekt ayarları sıfırlandı.");
-
-}
-
-function getSettings(){
-
-const o={};ids.forEach(id=>o[id]=$(id).value);o.lyrics=lyrics;return o;
-
-}
-
-function applySettings(o){
-
-ids.forEach(id=>{if(o[id]!==undefined){const v=Number(o[id]),e=$(id);if(Number.isFinite(v)&&v>=+e.min&&v<=+e.max){e.value=v;updateOutput(id);}}});
-
-lyrics=Array.isArray(o.lyrics)?o.lyrics:[];renderLyrics();
- if(playerGraph)applyGraph(playerGraph);
-
-}
-
-function openDB(){
-
-return new Promise((resolve,reject)=>{
-
-const r=indexedDB.open("VokalStudyomProDB",1);
-
-r.onupgradeneeded=()=>{const d=r.result;if(!d.objectStoreNames.contains("projects"))d.createObjectStore("projects");};
-
-r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);
-
-});
-
-}
-
-async function saveProject(){
-
-try{
-
-const d=await openDB(),tx=d.transaction("projects","readwrite");
-
-tx.objectStore("projects").put({settings:getSettings(),tracks}, "main");
-
-tx.oncomplete=()=>{$("projectStatus").textContent="Proje ve kayıt kanalları bu cihaza kaydedildi.";announce("Proje kaydedildi.");d.close();};
-
-tx.onerror=()=>{throw tx.error;};
-
-}catch(e){$("projectStatus").textContent="Kaydetme hatası: "+e.message;}
-
-}
-
-async function loadProject(){
-
-try{
-
-const d=await openDB(),tx=d.transaction("projects","readonly"),r=tx.objectStore("projects").get("main");
-
-r.onsuccess=()=>{
-
-if(!r.result){$("projectStatus").textContent="Kayıtlı proje bulunamadı.";d.close();return;}
-
-applySettings(r.result.settings||{});tracks=r.result.tracks||[];renderTracks();
-
-$("projectStatus").textContent="Proje yüklendi.";announce("Proje yüklendi.");d.close();
-
-};
-
-r.onerror=()=>{throw r.error;};
-
-}catch(e){$("projectStatus").textContent="Yükleme hatası: "+e.message;}
-
-}
-
-function blobToBase64(blob){
-
-return new Promise((resolve,reject)=>{
-
-const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=reject;r.readAsDataURL(blob);
-
-});
-
-}
-
-async function exportProject(){
-
-try{
-
-const data={settings:getSettings(),tracks:[]};
-
-for(const t of tracks)data.tracks.push({...t,blob:await blobToBase64(t.blob)});
-
-downloadBlob(new Blob([JSON.stringify(data)],{type:"application/json"}),"vokal-studyom-proje.json");
-
-$("projectStatus").textContent="Proje dosyası dışa aktarıldı.";
-
-}catch(e){$("projectStatus").textContent="Proje dışa aktarılamadı: "+e.message;}
-
-}
-
-$("projectFile").addEventListener("change",async e=>{
-
-const f=e.target.files?.[0];if(!f)return;
-
-try{
-
-const data=JSON.parse(await f.text());applySettings(data.settings||{});
-
-tracks=(data.tracks||[]).map(t=>({...t,blob:fetch(t.blob).then(r=>r.blob())}));
-
-for(const t of tracks)t.blob=await t.blob;
-
-renderTracks();$("projectStatus").textContent="Proje dosyası içe aktarıldı.";
-
-}catch(err){$("projectStatus").textContent="Proje dosyası okunamadı: "+err.message;}
-
-});
-
-$("videoFile").addEventListener("change",e=>{
-
-const f=e.target.files?.[0];if(!f)return;
-
-if(!f.type.startsWith("video/"))return announce("Video dosyası seçmelisin.");
-
-if(videoUrl)URL.revokeObjectURL(videoUrl);
-
-videoUrl=URL.createObjectURL(f);video.src=videoUrl;video.load();
-
-$("videoInfo").textContent="Video: "+f.name+"; "+(f.size/1048576).toFixed(2)+" MB.";
-
-video.onloadedmetadata=()=>{$("videoEnd").value=video.duration.toFixed(1);$("videoStart").value="0";};
-
-$("videoStatus").textContent="Video yüklendi.";
-
-});
-
-function setVideoStart(){
-
-if(!video.src)return announce("Önce video yükle.");
-
-$("videoStart").value=video.currentTime.toFixed(1);announce("Başlangıç zamanı ayarlandı.");
-
-}
-
-function setVideoEnd(){
-
-if(!video.src)return announce("Önce video yükle.");
-
-$("videoEnd").value=video.currentTime.toFixed(1);announce("Bitiş zamanı ayarlandı.");
-
-}
-
-function previewVideoTrim(){
-
-if(!video.src)return announce("Önce video yükle.");
-
-const s=+$("videoStart").value,e=+$("videoEnd").value||video.duration;
-
-if(s<0||e<=s||e>video.duration)return announce("Başlangıç ve bitiş değerlerini kontrol et.");
-
-video.currentTime=s;video.play();
-
-video.ontimeupdate=()=>{if(video.currentTime>=e){video.pause();video.ontimeupdate=null;}};
-
-announce("Video bölümü önizleniyor.");
-
-}
-
-async function exportVideo(){
-
-if(!video.src)return announce("Önce video yükle.");
-
-if(!HTMLCanvasElement.prototype.captureStream||!window.MediaRecorder)return announce("Bu tarayıcı video dışa aktarmayı desteklemiyor.");
-
-const s=+$("videoStart").value,e=+$("videoEnd").value||video.duration;
- if(s<0||e<=s||e>video.duration)return announce("Video zamanları geçersiz.");
-
-try{
-
-await ensureContext();
-
-if(!videoGraph){
-
-const source=ctx.createMediaElementSource(video);videoGraph=buildGraph(source);
-
-}
-
-const canvas=document.createElement("canvas");canvas.width=video.videoWidth||1280;canvas.height=video.videoHeight||720;
-
-const c=canvas.getContext("2d");
-
-const draw=()=>{if(video.readyState>=2)c.drawImage(video,0,0,canvas.width,canvas.height);videoAnimation=requestAnimationFrame(draw);};
-
-draw();videoStream=canvas.captureStream(30);
-
-videoGraph.destination.stream.getAudioTracks().forEach(t=>videoStream.addTrack(t));
-
-const mime=["video/mp4","video/webm;codecs=vp9,opus","video/webm"].find(x=>MediaRecorder.isTypeSupported(x));
-
-if(!mime)throw new Error("Desteklenen video biçimi bulunamadı.");
-
-videoRecorder=new MediaRecorder(videoStream,{mimeType:mime});let chunks=[];
-
-videoRecorder.ondataavailable=x=>{if(x.data.size)chunks.push(x.data);};
-
-videoRecorder.onstop=()=>{
- cancelAnimationFrame(videoAnimation);videoStream?.getTracks().forEach(t=>t.stop());
-
-const ext=mime.includes("mp4")?"mp4":"webm";
-
-downloadBlob(new Blob(chunks,{type:mime}),"vokal-studyom-video."+ext);
-
-$("videoStatus").textContent="Video dışa aktarma tamamlandı.";
-
-};
-
-video.currentTime=s;await video.play();videoRecorder.start();
-
-videoTimer=setTimeout(()=>{video.pause();if(videoRecorder.state!=="inactive")videoRecorder.stop();},(e-s)*1000);
-
-$("videoStatus").textContent="Video dışa aktarılıyor.";
-
-}catch(err){$("videoStatus").textContent="Video dışa aktarma hatası: "+err.message;stopVideoExport();}
-
-}
-
-function stopVideoExport(){
-
-clearTimeout(videoTimer);if(videoRecorder&&videoRecorder.state!=="inactive")videoRecorder.stop();
-
-video.pause();cancelAnimationFrame(videoAnimation);videoStream?.getTracks().forEach(t=>t.stop());
-
-$("videoStatus").textContent="Video dışa aktarma durduruldu.";
-
-}
-
-window.addEventListener("beforeunload",()=>{
-
-if(audioUrl)URL.revokeObjectURL(audioUrl);
- if(videoUrl)URL.revokeObjectURL(videoUrl);
-
-micStream?.getTracks().forEach(t=>t.stop());
-
-videoStream?.getTracks().forEach(t=>t.stop());
-
-});
-
-announce("Vokal Stüdyom Pro hazır.");
+settingIds.forEach(id=>updateSetting(id));renderTracks();showSection('home');announce('Vokal Stüdyom Pro hazır.');
 
 </script>
 
-</body>
-
-</html>
+</body></html>
