@@ -1,0 +1,21 @@
+{
+
+  "name": "Vokal Stüdyom Akıllı",
+
+  "short_name": "Vokal Stüdyom",
+
+  "description": "Otomatik vokal prodüksiyonu ve akıllı miksaj stüdyosu",
+
+  "start_url": "./",
+
+  "scope": "./",
+
+  "display": "standalone",
+
+  "background_color": "#10131c",
+
+  "theme_color": "#10131c",
+
+  "lang": "tr"
+
+}
