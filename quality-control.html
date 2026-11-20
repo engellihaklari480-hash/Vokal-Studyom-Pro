@@ -1,0 +1,614 @@
+
+
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="theme-color" content="#10131c">
+
+<title>Vokal Stüdyom - Akıllı Kontrol</title>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{margin:0;padding:18px;background:#10131c;color:#f4f6fb;font-family:Arial,sans-serif;line-height:1.6}
+
+main{max-width:750px;margin:auto}
+
+h1{font-size:25px}
+
+h2{font-size:19px}
+
+.panel{background:#1b2231;border:1px solid #39445b;border-radius:13px;padding:15px;margin:14px 0}
+
+button{font-size:17px;font-weight:bold;padding:14px;margin:5px 5px 5px 0;border:0;border-radius:9px;background:#8ab4ff;color:#10131c}
+
+button:focus-visible{outline:3px solid #ffd166}
+
+.status{font-weight:bold}
+
+.pass{color:#79e0a2}
+
+.warn{color:#ffd166}
+
+.fail{color:#ff8c8c}
+
+.pending{color:#b9c8e8}
+
+.item{padding:12px 0;border-bottom:1px solid #39445b}
+
+iframe{width:100%;height:300px;background:white;border:1px solid #39445b;border-radius:9px}
+ </style>
+
+</head>
+
+<body>
+
+<main>
+
+<h1>Vokal Stüdyom Akıllı Kontrol Merkezi</h1>
+
+<p>Bu sistem uygulamanın temel teknik özelliklerini, tarayıcı desteğini, depolama altyapısını ve erişilebilirlik işaretlerini otomatik denetler.</p>
+
+<section class="panel" aria-live="polite">
+
+<div id="overall" class="status pending">Kontrol başlatılmayı bekliyor.</div>
+
+<p id="counts">Henüz test yapılmadı.</p>
+
+<button id="run">Bütün testleri başlat</button>
+
+</section>
+
+<h2>Test sonuçları</h2>
+
+<section id="results" class="panel" aria-live="polite">
+
+Test sonuçları burada gösterilecek.
+
+</section>
+
+<h2>Ana uygulama bağlantısı</h2>
+
+<section class="panel">
+
+<p>Ana uygulama bu alanda yüklenir.</p>
+
+<iframe id="appframe" title="Vokal Stüdyom ana uygulaması" src="./index.html"></iframe>
+
+</section>
+
+<h2>Yapay zekâ teşhis raporu</h2>
+
+<section id="advice" class="panel" aria-live="polite">
+
+Kontrol tamamlandığında teşhis raporu burada gösterilecek.
+
+</section>
+
+<section class="panel">
+
+<h2>Test sisteminin sınırları</h2>
+
+<p>Bu sürüm yerel ve kural tabanlı bir teşhis motorudur. Harici bir yapay zekâ modeline bağlı değildir.</p>
+
+<p>Mikrofonun gerçek kaydını, efektlerin işitsel kalitesini ve profesyonel mastering sonucunu otomatik olarak kesin biçimde doğruladığını iddia etmez. Bunlar için ayrıca ses sinyali testleri gereklidir.</p>
+
+</section>
+
+</main>
+
+<script>
+
+"use strict";
+
+const $=id=>document.getElementById(id);
+
+const results=[];
+
+function add(name,state,detail){
+
+ results.push({name,state,detail});
+
+}
+
+async function test(name,fn){
+
+ try{
+
+  const result=await fn();
+
+  add(name,result.state||"pass",result.detail||"Kontrol tamamlandı.");
+
+ }catch(error){
+
+  add(name,"fail",error.message||String(error));
+
+ }
+
+}
+
+function appCheck(){
+
+ const frame=$("appframe");
+
+ try{
+
+  const doc=frame.contentDocument;
+
+  if(!doc||!doc.documentElement){
+
+   return {state:"fail",detail:"Ana uygulama sayfasına erişilemiyor."};
+
+  }
+
+  return {
+
+   state:"pass",
+
+   detail:"Ana sayfa yüklendi. Başlık: "+doc.title+
+
+   ". Etkileşimli öğe sayısı: "+
+
+   doc.querySelectorAll("button,input,select,textarea").length
+
+  };
+
+ }catch(e){
+
+  return {state:"fail",detail:"Ana uygulama incelenemedi: "+e.message};
+
+ }
+
+}
+
+function accessibilityCheck(){
+
+ const doc=$("appframe").contentDocument;
+
+ if(!doc||!doc.body){
+
+  return {state:"warn",detail:"Ana sayfanın içeriği incelenemedi."};
+
+ }
+
+ const controls=[...doc.querySelectorAll(
+
+  "button,input,select,textarea,[role=button]"
+
+ )];
+
+ const unlabeled=controls.filter(el=>{
+
+  const aria=el.getAttribute("aria-label");
+
+  const title=el.getAttribute("title");
+
+  const text=el.innerText||el.textContent||"";
+
+  const labels=el.labels?[...el.labels].length:0;
+
+  return !((aria&&aria.trim())||(title&&title.trim())||
+
+  text.trim()||labels);
+
+ });
+
+ const missingAlt=[...doc.images].filter(
+
+  img=>!img.hasAttribute("alt")
+
+ ).length;
+
+ return {
+
+  state:unlabeled.length||missingAlt?"warn":"pass",
+
+  detail:"İncelenen kontrol: "+controls.length+ 
+  ". Etiketsiz kontrol: "+unlabeled.length+
+
+  ". Alt metinsiz görsel: "+missingAlt+
+
+  ". Canlı bildirim alanı: "+
+
+  doc.querySelectorAll("[aria-live]").length
+
+ };
+
+}
+
+async function storageCheck(){
+
+ return new Promise(resolve=>{
+
+  if(!indexedDB){
+
+   resolve({state:"fail",detail:"IndexedDB desteklenmiyor."});
+
+   return;
+
+  }
+
+  const request=indexedDB.open("vokal-test-gecici",1);
+
+  request.onupgradeneeded=()=>{
+
+   const db=request.result;
+
+   if(!db.objectStoreNames.contains("test")){
+
+    db.createObjectStore("test");
+
+   }
+
+  };
+
+  request.onsuccess=()=>{
+
+   request.result.close();
+
+   indexedDB.deleteDatabase("vokal-test-gecici");
+
+   resolve({
+
+    state:"pass",
+
+    detail:"Geçici test veritabanı başarıyla açıldı. Projelerinize dokunulmadı."
+
+   });
+
+  };
+
+  request.onerror=()=>{
+
+   resolve({
+
+    state:"fail",
+
+    detail:"Veritabanı açılamadı."
+
+   });
+
+  };
+
+ });
+
+}
+
+async function audioCheck(){
+
+ const Audio=window.AudioContext||window.webkitAudioContext;
+
+ if(!Audio){
+
+  return {state:"fail",detail:"Web Audio API bulunamadı."};
+
+ }
+
+ const context=new Audio();
+
+ const state=context.state;
+
+ await context.close();
+
+ return {
+
+  state:"pass",
+
+  detail:"Ses motoru oluşturulabiliyor. İlk durum: "+state
+
+ };
+
+}
+
+function render(){
+
+ const passed=results.filter(x=>x.state==="pass").length;
+
+ const warnings=results.filter(x=>x.state==="warn").length;
+
+ const failed=results.filter(x=>x.state==="fail").length;
+
+ $("counts").textContent=
+
+ passed+" başarılı, "+warnings+" uyarı, "+failed+" hata.";
+
+ $("overall").textContent=failed?
+
+ "Kontrol tamamlandı. Hatalar bulundu.":
+
+ warnings?
+
+ "Kontrol tamamlandı. Ek inceleme gerekiyor.":
+
+ "Kontrol tamamlandı.";
+
+ $("overall").className="status "+
+
+ (failed?"fail":warnings?"warn":"pass");
+
+ const container=$("results");
+
+ container.replaceChildren();
+
+ const order={fail:0,warn:1,pass:2};
+
+ results.sort((a,b)=>order[a.state]-order[b.state]);
+
+ for(const result of results){
+
+  const item=document.createElement("div");
+
+  item.className="item";
+
+  const heading=document.createElement("div");
+
+  heading.className="status "+result.state;
+
+  heading.textContent=
+
+  (result.state==="pass"?"BAŞARILI":
+
+   result.state==="warn"?"UYARI":"HATA")+
+
+   " - "+result.name;
+
+  const detail=document.createElement("p");
+
+  detail.textContent=result.detail;
+
+  item.append(heading,detail);
+
+  container.append(item);
+
+ }
+
+ const advice=[];
+
+ if(failed){
+
+  advice.push("Öncelikli işlem: Başarısız testlerdeki teknik sorunlar düzeltilmeli.");
+
+ }
+
+ if(warnings){
+
+  advice.push("Uyarılar: İlgili özellikler ayrıca doğrulanmalı.");
+
+ }
+
+ if(!results.some(x=>x.name==="PWA manifesti"&&x.state==="pass")){
+
+  advice.push("Ana uygulamanın manifest bağlantısı kontrol edilmeli.");
+
+ }
+
+ advice.push("Bu sonuçlar gerçek ses kalitesini veya bütün efektlerin çalışmasını kanıtlamaz.");
+
+ $("advice").replaceChildren();
+
+ advice.forEach(text=>{
+
+  const p=document.createElement("p");
+
+  p.textContent=text;
+
+  $("advice").append(p);
+
+ });
+
+}
+
+async function runTests(){
+
+ results.length=0;
+
+ $("overall").textContent="Testler çalışıyor.";
+
+ $("overall").className="status pending";
+
+ $("results").textContent="Testler yürütülüyor.";
+
+ await new Promise(resolve=>setTimeout(resolve,1000));
+
+ await test("Ana uygulama yüklenmesi",async()=>{
+
+  return appCheck();
+
+ });
+
+ await test("Web Audio API",async()=>{
+
+  return {
+
+   state:window.AudioContext||window.webkitAudioContext?
+
+   "pass":"fail",
+
+   detail:"Tarayıcı ses API desteği kontrol edildi."
+
+  };
+
+ });
+
+ await test("Ses motoru oluşturma",audioCheck);
+
+ await test("Mikrofon erişim API'si",async()=>{
+
+  const supported=navigator.mediaDevices&&
+
+  navigator.mediaDevices.getUserMedia;
+
+  return {
+
+   state:supported?"pass":"fail",
+
+   detail:supported?
+
+   "Mikrofon API mevcut. Gerçek izin istenmedi.":
+
+   "Mikrofon API bulunamadı."
+
+  };
+
+ });
+
+ await test("Ses kayıt API'si",async()=>{
+
+  return {
+
+   state:window.MediaRecorder?"pass":"warn",
+
+   detail:window.MediaRecorder?
+
+   "MediaRecorder destekleniyor.":
+
+   "MediaRecorder desteği bulunamadı."
+
+  };
+
+ });
+
+ await test("Dosya okuma sistemi",async()=>{
+
+  const ok=window.File&&window.FileReader&&window.Blob;
+
+  return {
+
+   state:ok?"pass":"fail",
+
+   detail:ok?
+
+   "Dosya okuma API'leri mevcut.":
+
+   "Dosya okuma API'lerinden biri eksik."
+
+  };
+
+ });
+
+ await test("Video ve Canvas desteği",async()=>{
+
+  const ok=window.HTMLVideoElement&&
+
+  window.HTMLCanvasElement;
+
+  return {
+
+   state:ok?"pass":"fail",
+
+   detail:ok?
+
+   "Video ve Canvas API destekleniyor.":
+
+   "Video veya Canvas desteği eksik."
+
+  };
+
+ });
+
+ await test("Proje depolama sistemi",storageCheck);
+
+ await test("Yerel depolama",async()=>{
+
+  try{
+
+   const key="vokal-test";
+
+   localStorage.setItem(key,"ok");
+
+   const value=localStorage.getItem(key);
+
+   localStorage.removeItem(key);
+
+   return {
+
+    state:value==="ok"?"pass":"fail",
+
+    detail:"Yerel depolama yazma ve okuma kontrol edildi."
+
+   };
+
+  }catch(e){
+
+   return {state:"fail",detail:e.message};
+
+  }
+
+ });
+
+ await test("Çevrimdışı altyapı",async()=>{
+
+  return {
+
+   state:"serviceWorker" in navigator?"pass":"warn",
+
+   detail:"serviceWorker" in navigator?
+
+   "Service Worker API destekleniyor.":
+
+   "Service Worker API bulunamadı."
+
+  };
+
+ });
+
+ await test("İnternet bağlantısı",async()=>{
+
+  return {
+
+   state:navigator.onLine?"pass":"warn",
+
+   detail:navigator.onLine?
+
+   "Tarayıcı çevrimiçi görünüyor.":
+
+   "Tarayıcı çevrimdışı görünüyor."
+
+  };
+
+ });
+
+ await test("VoiceOver erişilebilirlik işaretleri",async()=>{
+
+  return accessibilityCheck();
+
+ });
+
+ await test("PWA manifesti",async()=>{
+
+  const doc=$("appframe").contentDocument;
+
+  const manifest=doc&&doc.querySelector('link[rel="manifest"]');
+
+  return {
+
+   state:manifest?"pass":"warn",
+
+   detail:manifest?
+
+   "Manifest bağlantısı bulundu.":
+
+   "Ana HTML dosyasında manifest bağlantısı bulunamadı."
+
+  };
+
+ });
+
+ render(); 
+}
+
+$("run").addEventListener("click",runTests);
+
+</script>
+
+</body>
+
+</html>
